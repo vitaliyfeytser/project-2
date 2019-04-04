@@ -100,36 +100,92 @@
       <div class="container-fluid" id="formSection">
           <div class="row justify-content-center">
               <div class="col-8">
-                  <form>
-                      <div class="form-group">
-                        <label for="exampleFormControlInput1">Email address</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                
+            <form class="justify-content-center">
+
+              <div class="row justify-content-center">
+                <div class="col-4">
+                  <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                          <div class="input-group-text">First Name:</div>
                       </div>
-                      <div class="form-group">
-                        <label for="exampleFormControlSelect1">Example select</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
+                      <input type="text" class="form-control" id="firstNameInput" placeholder="Donnie">
+                  </div>
+                </div>  
+                <div class="col-4">
+                  <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                          <div class="input-group-text">Last Name:</div>
                       </div>
-                      <div class="form-group">
-                        <label for="exampleFormControlSelect2">Example multiple select</label>
-                        <select multiple class="form-control" id="exampleFormControlSelect2">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
+                      <input type="text" class="form-control" id="LastNameInput" placeholder="Last">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row justify-content-center">
+                <div class="col-4">
+                  <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                          <div class="input-group-text">City:</div>
                       </div>
-                      <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Example textarea</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <input type="text" class="form-control" id="cityInput" placeholder="Sacramento">
+                  </div>
+                </div>
+                <div class="col-4">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">State:</div>
+                        </div>
+                        <input type="text" class="form-control" id="stateInput" placeholder="Kalifornia">
+                    </div>
+                  </div>
+              </div>
+
+              <div class="row justify-content-center">
+                <div class="col-4">
+                  <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                          <div class="input-group-text">Gender:</div>
                       </div>
-                    </form>
+                      <input type="text" class="form-control" id="genderInput" placeholder="Caitlyn Jenner">
+                  </div>
+                </div>
+                <div class="col-4">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Age:</div>
+                        </div>
+                        <input type="text" class="form-control" id="ageInput" placeholder="95">
+                    </div>
+                </div>
+              </div>
+
+              <div class="row justify-content-center">
+                <div class="col-8">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">Email:</div>
+                    </div>
+                    <input type="email" class="form-control" id="emailInput" placeholder="shithead@us.gov">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row justify-content-center">
+              <div class="col-8">
+                  <div class="form-group">
+                      <label for="shortPersonalBio">Short Personal Bio:</label>
+                      <textarea class="form-control" id="shortPersonalBioInput" rows="5"></textarea>
+                    </div>
+              </div>
+            </div>
+            
+            <div class="row justify-content-center">
+            <div class="col-8">
+              <button type="submit" id="btnSubmitProfile" class="btn btn-lightgit mb-2">Submit</button>
+            </div>
+            </div>
+                  </form>
               </div>
           </div>
       </div>
