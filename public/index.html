@@ -1,222 +1,236 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-       <!-- Bootstrap CSS LINK-->
-       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- Bootstrap CSS LINK-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <!-- Custom own CSS -->
-    <link rel="stylesheet" href="styles/styles.css">
+  <!-- Custom own CSS -->
+  <link rel="stylesheet" href="styles/styles.css">
 
-    <!-- GOOGLE FONTS LINK -->
-    <link href="https://fonts.googleapis.com/css?family=Economica|Oxygen"
-        rel="stylesheet">
+  <!-- GOOGLE FONTS LINK -->
+  <link href="https://fonts.googleapis.com/css?family=Economica|Oxygen" rel="stylesheet">
 
-    <!-- FONT AWESOME LINK -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-        crossorigin="anonymous">
+  <!-- FONT AWESOME LINK -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-    <!-- JQUERY LINK -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!-- JQUERY LINK -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-    <!-- JQUERY VALIDATE PLUGIN LINK -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+  <!-- JQUERY VALIDATE PLUGIN LINK -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
 
-    <!-- FIREBASE LINK -->
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <!-- FIREBASE LINK -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 
-    <!-- MOMENT.JS LINK -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <!-- MOMENT.JS LINK -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 
-    <title>PROJECT 2</title>
+  <title>PROJECT 2</title>
 </head>
+
 <body>
 
-    <!-- ******************** Navigation ******************** -->
-    <nav class="navbar navbar-dark bg-dark navbar-expand-md">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo.svg" width="48px" height="40px" alt="Logo">
-                <span class="pl-2">COOL KIDS BOOK CLUB</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <div class="navbar-nav ml-auto">
-                    <button type="button" id="loginBtn" class="btn btn-light btn-sm" data-toggle="modal" data-target="#popUpWindow">ACCOUNT</button>
-                    <a class="nav-item nav-link text-center" href="#home">HOME</a>
-                    <a class="nav-item nav-link text-center" href="#weather">BOOKS</a>
-                    <a class="nav-item nav-link text-center" href="#apod">MEETUPS</a>
-                </div>
-            </div>
+  <!-- ******************** Navigation ******************** -->
+  <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.svg" width="48px" height="40px" alt="Logo">
+        <span class="pl-2">COOL KIDS BOOK CLUB</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div class="navbar-nav ml-auto">
+          <button type="button" id="loginBtn" class="btn btn-light btn-sm" data-toggle="modal"
+            data-target="#popUpWindow">ACCOUNT</button>
+          <a class="nav-item nav-link text-center" href="#home">HOME</a>
+          <a class="nav-item nav-link text-center" href="#weather">BOOKS</a>
+          <a class="nav-item nav-link text-center" href="#apod">MEETUPS</a>
         </div>
-    </nav>
-    
-    <!-- ******************** MAIN SECTION ******************** -->
-    <div class="container" id="mainSection">
-        <div class="row" id="cardRow">
-            <div class="col">
+      </div>
+    </div>
+  </nav>
+
+  <!-- ******************** MAIN SECTION ******************** -->
+  <div class="container" id="mainSection">
+    <div class="row" id="cardRow">
+      <div class="col">
         <div class="card-deck">
-            <div class="card">
-              <img class="card-img-top" src="./images/hb.jpeg" alt="Holy Bible">
-              <div class="card-body">
-                <h5 class="card-title">THE ACTION BIBLE</h5>
-                <p class="card-text">Finally!  From the authors who brought you the "HOLY BIBLE", "SANTA CLAUSE & RUDOLPH", "GHOSTS ARE REAL, NO - I'M SERIOUS!" comes a story of the Bible Heroes and Devotion! Let's meet up and talk about Moses while coloring him at the same time with your choice of crayons!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
+          <div class="card">
+            <img class="card-img-top" src="./images/hb.jpeg" alt="Holy Bible">
+            <div class="card-body">
+              <h5 class="card-title">THE ACTION BIBLE</h5>
+              <p class="card-text">Finally! From the authors who brought you the "HOLY BIBLE", "SANTA CLAUSE & RUDOLPH",
+                "GHOSTS ARE REAL, NO - I'M SERIOUS!" comes a story of the Bible Heroes and Devotion! Let's meet up and
+                talk about Moses while coloring him at the same time with your choice of crayons!</p>
             </div>
-            <div class="card">
-              <img class="card-img-top" src="./images/ks.jpeg" alt="Kama Sutra">
-              <div class="card-body">
-                <h5 class="card-title">KAMA SUTRA FOR BEGINNERS</h5>
-                <p class="card-text">Will you just look at the cover page?  Does it not make you want to read this book again and again?  Yes, we feel the same way!  Let's meet up and read it together.  Bring your kids, your grandkids, KAMA SUTRA is for everyone!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
             </div>
-            <div class="card">
-              <img class="card-img-top" src="./images/yp.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">YELLOW PAGES</h5>
-                <p class="card-text">This book is not for the light of heart... The New Yorker calls it "Riveting!!!", The Guardian says "If there's one book you read your entire life... this is the one!".  Let's meet up and flip from page to page together in search for the meanting of life and winning lottery numbers.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="./images/ks.jpeg" alt="Kama Sutra">
+            <div class="card-body">
+              <h5 class="card-title">KAMA SUTRA FOR BEGINNERS</h5>
+              <p class="card-text">Will you just look at the cover page? Does it not make you want to read this book
+                again and again? Yes, we feel the same way! Let's meet up and read it together. Bring your kids, your
+                grandkids, KAMA SUTRA is for everyone!</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="./images/yp.jpeg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">YELLOW PAGES</h5>
+              <p class="card-text">This book is not for the light of heart... The New Yorker calls it "Riveting!!!", The
+                Guardian says "If there's one book you read your entire life... this is the one!". Let's meet up and
+                flip from page to page together in search for the meanting of life and winning lottery numbers.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </div>
+  </div>
 
-      <!-- ******************** SECTION 2 ******************** -->
-      <div class="container-fluid" id="formSection">
+  <!-- ******************** SECTION 2 ******************** -->
+  <div class="container-fluid" id="formSection">
+    <div class="row justify-content-center">
+      <div class="col-8">
+
+        <form class="justify-content-center" id="profileForm">
+
           <div class="row justify-content-center">
-              <div class="col-8">
-                
-            <form class="justify-content-center">
-
-              <div class="row justify-content-center">
-                <div class="col-4">
-                  <div class="input-group mb-2">
-                      <div class="input-group-prepend">
-                          <div class="input-group-text">First Name:</div>
-                      </div>
-                      <input type="text" class="form-control" id="firstNameInput" placeholder="Donnie">
-                  </div>
-                </div>  
-                <div class="col-4">
-                  <div class="input-group mb-2">
-                      <div class="input-group-prepend">
-                          <div class="input-group-text">Last Name:</div>
-                      </div>
-                      <input type="text" class="form-control" id="LastNameInput" placeholder="Last">
-                  </div>
+            <div class="col-4">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">First Name:</div>
                 </div>
-              </div>
-
-              <div class="row justify-content-center">
-                <div class="col-4">
-                  <div class="input-group mb-2">
-                      <div class="input-group-prepend">
-                          <div class="input-group-text">City:</div>
-                      </div>
-                      <input type="text" class="form-control" id="cityInput" placeholder="Sacramento">
-                  </div>
-                </div>
-                <div class="col-4">
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">State:</div>
-                        </div>
-                        <input type="text" class="form-control" id="stateInput" placeholder="Kalifornia">
-                    </div>
-                  </div>
-              </div>
-
-              <div class="row justify-content-center">
-                <div class="col-4">
-                  <div class="input-group mb-2">
-                      <div class="input-group-prepend">
-                          <div class="input-group-text">Gender:</div>
-                      </div>
-                      <input type="text" class="form-control" id="genderInput" placeholder="Caitlyn Jenner">
-                  </div>
-                </div>
-                <div class="col-4">
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">Age:</div>
-                        </div>
-                        <input type="text" class="form-control" id="ageInput" placeholder="95">
-                    </div>
-                </div>
-              </div>
-
-              <div class="row justify-content-center">
-                <div class="col-8">
-                  <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">Email:</div>
-                    </div>
-                    <input type="email" class="form-control" id="emailInput" placeholder="shithead@us.gov">
-                  </div>
-                </div>
-              </div>
-              
-              <div class="row justify-content-center">
-              <div class="col-8">
-                  <div class="form-group">
-                      <label for="shortPersonalBio">Short Personal Bio:</label>
-                      <textarea class="form-control" id="shortPersonalBioInput" rows="5"></textarea>
-                    </div>
+                <input type="text" class="form-control" id="firstNameInput" placeholder="Donnie">
               </div>
             </div>
-            
-            <div class="row justify-content-center">
+            <div class="col-4">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Last Name:</div>
+                </div>
+                <input type="text" class="form-control" id="LastNameInput" placeholder="Last">
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-4">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">City:</div>
+                </div>
+                <input type="text" class="form-control" id="cityInput" placeholder="Sacramento">
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">State:</div>
+                </div>
+                <input type="text" class="form-control" id="stateInput" placeholder="Kalifornia">
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-4">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Gender:</div>
+                </div>
+                <input type="text" class="form-control" id="genderInput" placeholder="Caitlyn Jenner">
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Age:</div>
+                </div>
+                <input type="text" class="form-control" id="ageInput" placeholder="95">
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-8">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Email:</div>
+                </div>
+                <input type="email" class="form-control" id="emailInput" placeholder="shithead@us.gov">
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-8">
+              <div class="form-group">
+                <label for="shortPersonalBio">Short Personal Bio:</label>
+                <textarea class="form-control" id="shortPersonalBioInput" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
             <div class="col-8">
               <button type="submit" id="btnSubmitProfile" class="btn btn-lightgit mb-2">Submit</button>
             </div>
-            </div>
-                  </form>
-              </div>
           </div>
+        </form>
       </div>
+    </div>
+  </div>
 
 
-      <!-- ******************** SECTION 3 ******************** -->
-      <div class="container-fluid" id="secondSection">
-          <div class="row justify-content-center">
-              <div class="col-8">
-                  
-              </div>
-          </div>
+  <!-- ******************** SECTION 3 ******************** -->
+  <div class="container-fluid" id="secondSection">
+    <div class="row justify-content-center">
+      <div class="col-8">
+
       </div>
+    </div>
+  </div>
 
-    <!-- ******************** FOOTER: ******************** -->
-    <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  <!-- ******************** FOOTER: ******************** -->
+  <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <footer>
         <div class="container">
             <p>Copyright &copy; | CKBC 2019</p>
         </div>
     </footer> -->
 
-    <!-- ******************** LIBRARIES and SCRIPTS LINKS ******************** -->
+  <!-- ******************** LIBRARIES and SCRIPTS LINKS ******************** -->
 
-    <!-- IMPORTANT ORDER FOR BOOTSTRAP NAVIGATION ON MOBILE DEVICES: jQuery JS first, then Popper JS, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+  <!-- IMPORTANT ORDER FOR BOOTSTRAP NAVIGATION ON MOBILE DEVICES: jQuery JS first, then Popper JS, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 
 </body>
+
 </html>

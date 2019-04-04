@@ -151,11 +151,11 @@ padding: 4px;
 
 #formSection {
   background-color: #FFC1A1;
-  padding: 15% 0 15% 0;
+  padding: 10% 0 10% 0;
 }
 
 #secondSection {
-  background-color: lightgray;
+  background-color: #3BB2AD;
   padding: 15% 0 15% 0;
 }
 
@@ -196,4 +196,10 @@ hr {
     padding: 0 10px 0 10px;
     margin-right: 10px;
     outline: none !important;
+}
+
+#profileForm {
+  padding: 10%;
+  background-color: #C7977D;
+  border-radius: 4px;
 }
