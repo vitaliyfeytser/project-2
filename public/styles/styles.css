@@ -1,6 +1,7 @@
 body {
   margin-bottom: 60px;
-  background-color: #A3E9E5;}
+  background-color: #839b9f;
+}
 
 
 main {
@@ -13,12 +14,26 @@ main {
 .card-title,
 .author {
   font-family: 'Economica', sans-serif;
-}   
+}
 
 .card-title {
   color: #5ea3d7;
   text-align: center;
   font-size: 1.6rem
+}
+
+.jumbotron {
+  background-color: #b2aa94;
+}
+
+.display-3 {
+  font-family: 'Economica', sans-serif;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.lead {
+  text-align: center;
 }
 
 footer {
@@ -35,13 +50,18 @@ footer {
   z-index: 1060;
 }
 
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
 .card {
   border: 0px;
   height: 100%;
 }
 
-.card-body{
-  background-color: #2d3236;
+.card-body {
+  background-color: #4e5e6b;
 }
 
 .title {
@@ -77,12 +97,11 @@ footer {
   text-align: center;
 }
 
-.card-footer-weather {
-  background-color: #2d3236;
+.card-footer {
+  font-family: 'Economica', sans-serif;
+  text-transform: uppercase;
   text-align: center;
-  align-content: center;
-  border-top: 0;
-  padding-top: 0;
+  padding: 10px;
 }
 
 .card-text {
@@ -92,7 +111,7 @@ footer {
 }
 
 .col-weather {
-padding: 4px;
+  padding: 4px;
 }
 
 #forecastContainer {
@@ -111,7 +130,7 @@ padding: 4px;
 }
 
 .carousel-caption {
-  background-color:rgba(192,192,192,0.1);
+  background-color: rgba(192, 192, 192, 0.1);
   border-radius: 0.2rem;
   right: 0;
   left: 0;
@@ -122,7 +141,7 @@ padding: 4px;
 }
 
 #forecastCity {
-  text-transform:capitalize;
+  text-transform: capitalize;
 }
 
 #summaryToday {
@@ -141,7 +160,7 @@ padding: 4px;
   padding-bottom: 2rem !important;
 }
 
-.card-apod{
+.card-apod {
   background-color: white;
 }
 
@@ -150,7 +169,7 @@ padding: 4px;
 }
 
 #formSection {
-  background-color: #FFC1A1;
+  background-color: #ccc5ba;
   padding: 10% 0 10% 0;
 }
 
@@ -181,25 +200,29 @@ padding: 4px;
 }
 
 hr {
-    display: block;
-    width: 75%;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;
-    border-color: #666666;
+  display: block;
+  width: 75%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  border-color: #666666;
 }
 
 #loginBtn {
-    padding: 0 10px 0 10px;
-    margin-right: 10px;
-    outline: none !important;
+  padding: 0 10px 0 10px;
+  margin-right: 10px;
+  outline: none !important;
 }
 
-#profileForm {
-  padding: 10%;
-  background-color: #C7977D;
-  border-radius: 4px;
+.input-group-text {
+  min-width: 120px;
+}
+
+@media only screen and (max-width: 640px) {
+  .display-3 {
+    font-size: 3rem;
+  }
 }

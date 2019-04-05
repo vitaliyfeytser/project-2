@@ -71,11 +71,13 @@
             <div class="card-body">
               <h5 class="card-title">THE ACTION BIBLE</h5>
               <p class="card-text">Finally! From the authors who brought you the "HOLY BIBLE", "SANTA CLAUSE & RUDOLPH",
-                "GHOSTS ARE REAL, NO - I'M SERIOUS!" comes a story of the Bible Heroes and Devotion! Let's meet up and
-                talk about Moses while coloring him at the same time with your choice of crayons!</p>
+                "GHOSTS ARE REAL, NO - I'M SERIOUS!" comes a story of the Bible Heroes and Devotion! Let's meet up and together
+                color Moses with your favorite set of crayons!</p>
             </div>
             <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
+                <small class="text-muted">Join this book club or save for later!</small>
+                <img src="./images/check.png" alt="Sign Up!" width="20px" height="20px">
+                <img src="./images/heart.png" alt="Sign Up!" width="20px" height="20px">
             </div>
           </div>
           <div class="card">
@@ -83,11 +85,13 @@
             <div class="card-body">
               <h5 class="card-title">KAMA SUTRA FOR BEGINNERS</h5>
               <p class="card-text">Will you just look at the cover page? Does it not make you want to read this book
-                again and again? Yes, we feel the same way! Let's meet up and read it together. Bring your kids, your
-                grandkids, KAMA SUTRA is for everyone!</p>
+                again and again and again? Yes, we feel the same way! Let's meet up and read it together: bring your kids, your
+                grandkids, even your neighbor - KAMA SUTRA is for everyone!</p>
             </div>
             <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
+                <small class="text-muted">Join this book club or save for later!</small>
+                <img src="./images/check.png" alt="Sign Up!" width="20px" height="20px">
+                <img src="./images/heart.png" alt="Sign Up!" width="20px" height="20px">
             </div>
           </div>
           <div class="card">
@@ -96,10 +100,12 @@
               <h5 class="card-title">YELLOW PAGES</h5>
               <p class="card-text">This book is not for the light of heart... The New Yorker calls it "Riveting!!!", The
                 Guardian says "If there's one book you read your entire life... this is the one!". Let's meet up and
-                flip from page to page together in search for the meanting of life and winning lottery numbers.</p>
+                flip from page to page together in search for the meaning of life and winning lottery numbers.</p>
             </div>
             <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
+              <small class="text-muted">Join this book club or save for later!</small>
+              <img src="./images/check.png" alt="Sign Up!" width="20px" height="20px">
+              <img src="./images/heart.png" alt="Sign Up!" width="20px" height="20px">
             </div>
           </div>
         </div>
@@ -110,93 +116,123 @@
   <!-- ******************** SECTION 2 ******************** -->
   <div class="container-fluid" id="formSection">
     <div class="row justify-content-center">
-      <div class="col-8">
+      <div class="col-12 col-md-10">
 
-        <form class="justify-content-center" id="profileForm">
+          <div class="jumbotron">
+              <h1 class="display-3">Your next book adventure is calling!</h1>
+              <p class="lead">Join a local book club to meet people, read something new, engage in heathy debate about a premise of your favorite book, or just to continue to explore the wonderful world of books.</p>
 
-          <div class="row justify-content-center">
-            <div class="col-4">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">First Name:</div>
+              <form class="justify-content-center" id="profileForm">
+      
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-6">
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">First Name:</div>
+                      </div>
+                      <input type="text" class="form-control" id="firstNameInput" placeholder="Donnie">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Last Name:</div>
+                      </div>
+                      <input type="text" class="form-control" id="LastNameInput" placeholder="Trumpo">
+                    </div>
+                  </div>
                 </div>
-                <input type="text" class="form-control" id="firstNameInput" placeholder="Donnie">
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">Last Name:</div>
+      
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-6">
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">City:</div>
+                      </div>
+                      <input type="text" class="form-control" id="cityInput" placeholder="Sacramento">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">State:</div>
+                      </div>
+                      <input type="text" class="form-control" id="stateInput" placeholder="Kalifornia">
+                    </div>
+                  </div>
                 </div>
-                <input type="text" class="form-control" id="LastNameInput" placeholder="Last">
-              </div>
-            </div>
-          </div>
+      
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-6">
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Gender:</div>
+                      </div>
+                      <select class="custom-select">
+                        <option selected>Choose...</option>
+                        <option value="1">Female</option>
+                        <option value="2">Male</option>
+                        <option value="3">Caitlyn Jenner</option>
+                        <option value="4">Not Sure</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Age:</div>
+                      </div>
+                      <select class="custom-select">
+                        <option selected>Choose...</option>
+                        <option value="1">Immature Child (1-19)</option>
+                        <option value="2">Young Blood (20-29)</option>
+                        <option value="3">Midlife Crisis (30-39)</option>
+                        <option value="4">3 Kids & A Mortgage (40-49)</option>
+                        <option value="5">Old (50-69)</option>
+                        <option value="6">Super Old (70-89)</option>
+                        <option value="5">Beef Jerky (90+)</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="row justify-content-center">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <textarea class="form-control" id="BioInput" placeholder="How about a short personal bio?" rows="5"></textarea>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-6">
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Email:</div>
+                      </div>
+                      <input type="email" class="form-control" id="emailInput" placeholder="shithead@us.gov">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">Password:</div>
+                      </div>
+                      <input type="text" class="form-control" id="LastNameInput" placeholder="NOT 123abc">
+                    </div>
+                  </div>
+                </div>
+      
+                <br>
 
-          <div class="row justify-content-center">
-            <div class="col-4">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">City:</div>
+                <div class="row justify-content-center">
+                  <div class="col-12">
+                    <button type="submit" id="btnSubmitProfile" class="btn btn-light mb-2">Submit</button>
+                  </div>
                 </div>
-                <input type="text" class="form-control" id="cityInput" placeholder="Sacramento">
-              </div>
+              </form>
             </div>
-            <div class="col-4">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">State:</div>
-                </div>
-                <input type="text" class="form-control" id="stateInput" placeholder="Kalifornia">
-              </div>
-            </div>
-          </div>
 
-          <div class="row justify-content-center">
-            <div class="col-4">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">Gender:</div>
-                </div>
-                <input type="text" class="form-control" id="genderInput" placeholder="Caitlyn Jenner">
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">Age:</div>
-                </div>
-                <input type="text" class="form-control" id="ageInput" placeholder="95">
-              </div>
-            </div>
-          </div>
-
-          <div class="row justify-content-center">
-            <div class="col-8">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">Email:</div>
-                </div>
-                <input type="email" class="form-control" id="emailInput" placeholder="shithead@us.gov">
-              </div>
-            </div>
-          </div>
-
-          <div class="row justify-content-center">
-            <div class="col-8">
-              <div class="form-group">
-                <label for="shortPersonalBio">Short Personal Bio:</label>
-                <textarea class="form-control" id="shortPersonalBioInput" rows="5"></textarea>
-              </div>
-            </div>
-          </div>
-
-          <div class="row justify-content-center">
-            <div class="col-8">
-              <button type="submit" id="btnSubmitProfile" class="btn btn-lightgit mb-2">Submit</button>
-            </div>
-          </div>
-        </form>
       </div>
     </div>
   </div>
@@ -225,11 +261,11 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+  </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+  </script>
 
 </body>
 
