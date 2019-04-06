@@ -1,7 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+
+    "password": null,
+
     "database": "bookClub",
     "host": "localhost",
     "dialect": "mysql"

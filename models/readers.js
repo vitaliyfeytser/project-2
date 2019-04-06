@@ -1,4 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
+
     var readers = sequelize.define("readers", {
       firstName: DataTypes.STRING,
       lastName: DataTypes.STRING,
@@ -8,3 +9,4 @@ module.exports = function(sequelize, DataTypes) {
     });
     return readers;
   };
+
