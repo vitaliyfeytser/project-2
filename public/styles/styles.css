@@ -12,6 +12,7 @@ main {
 .navbar-brand,
 .navbar-nav,
 .card-title,
+.card-header,
 .author {
   font-family: 'Economica', sans-serif;
 }
@@ -57,7 +58,6 @@ footer {
 
 .card {
   border: 0px;
-  height: 100%;
 }
 
 .card-body {
@@ -68,33 +68,12 @@ footer {
   color: #a5a6a7;
 }
 
-.card-header-weather {
-  background-color: #292d31;
-  color: #a5a6a7;
+.card-header {
+  background-color: #4e5e6b;
+  color: #5ea3d7;
   text-align: center;
   border-bottom: 0;
-  font-size: .8rem;
-}
-
-.card-body-weather {
-  color: #2da5b3;
-  font-family: 'Economica', sans-serif;
-  font-size: 1.4rem;
-  text-align: center;
-}
-
-.card-body-current {
-  color: #e16341;
-  font-family: 'Economica', sans-serif;
-  font-size: 1.4rem;
-  text-align: center;
-}
-
-.card-body-forecast {
-  color: #92b92b;
-  font-family: 'Economica', sans-serif;
-  font-size: 1rem;
-  text-align: center;
+  font-size: 1.5rem;
 }
 
 .card-footer {
@@ -102,6 +81,17 @@ footer {
   text-transform: uppercase;
   text-align: center;
   padding: 10px;
+  border: 0;
+}
+
+.card-footer-horizontal {
+  font-family: 'Economica', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px;
+  border: 0;
+  position: absolute;
+  bottom: 0px;
 }
 
 .card-text {
@@ -110,49 +100,10 @@ footer {
   color: #a5a6a7;
 }
 
-.col-weather {
-  padding: 4px;
-}
-
-#forecastContainer {
-  padding: 20px;
-}
-
-#forecastCol {
-  background-color: darkslategrey;
-  padding: 20px;
-}
-
 .fav-icon {
   width: 20px;
   height: 20px;
   margin-left: 10px;
-}
-
-.carousel-caption {
-  background-color: rgba(192, 192, 192, 0.1);
-  border-radius: 0.2rem;
-  right: 0;
-  left: 0;
-}
-
-.carousel-indicators {
-  bottom: 20px;
-}
-
-#forecastCity {
-  text-transform: capitalize;
-}
-
-#summaryToday {
-  font-size: 1.3rem;
-  padding: 10px 5px 0 !important;
-  line-height: 1.3rem;
-  vertical-align: middle;
-}
-
-#forecastCity {
-  font-weight: bold;
 }
 
 .jumbotron {
@@ -160,12 +111,8 @@ footer {
   padding-bottom: 2rem !important;
 }
 
-.card-apod {
-  background-color: white;
-}
-
 #mainSection {
-  padding: 3% 0 3% 0;
+  padding: 5%;
 }
 
 #formSection {
@@ -173,9 +120,9 @@ footer {
   padding: 10% 0 10% 0;
 }
 
-#secondSection {
-  background-color: #3BB2AD;
-  padding: 15% 0 15% 0;
+#accountSection {
+  background-color: #307f81;
+  padding: 5%;
 }
 
 #myBtn {
@@ -221,8 +168,15 @@ hr {
   min-width: 120px;
 }
 
+.relative{
+  position: relative;
+}
+
 @media only screen and (max-width: 640px) {
   .display-3 {
     font-size: 3rem;
+  }
+  .card-footer-horizontal {
+    position: relative;
   }
 }
