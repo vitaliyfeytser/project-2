@@ -13,8 +13,10 @@ main {
 .navbar-nav,
 .card-title,
 .card-header,
-.author {
-  font-family: 'Economica', sans-serif;
+.author,
+h5,
+h6 {
+  font-family: 'Economica', sans-serif !important;
 }
 
 .card-title {
@@ -92,6 +94,7 @@ footer {
   border: 0;
   position: absolute;
   bottom: 0px;
+
 }
 
 .card-text {
@@ -168,8 +171,15 @@ hr {
   min-width: 120px;
 }
 
+.day,
+.location,
+.members {
+  font-weight: bolder;
+  padding: 5px 0 0 0;
+}
+
 .relative{
-  position: relative;
+  position: relative !important;
 }
 
 @media only screen and (max-width: 640px) {
