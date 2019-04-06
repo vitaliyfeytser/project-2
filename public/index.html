@@ -118,9 +118,11 @@
     <div class="row justify-content-center">
       <div class="col-12 col-md-10">
 
-          <div class="jumbotron">
+          <div class="jumbotron jumbotron-form">
               <h1 class="display-3">Your next book adventure is calling!</h1>
               <p class="lead">Join a local book club to meet people, read something new, engage in heathy debate about a premise of your favorite book, or just to continue to explore the wonderful world of books.</p>
+
+              <br>
 
               <form class="justify-content-center" id="profileForm">
       
@@ -168,7 +170,7 @@
                       <div class="input-group-prepend">
                         <div class="input-group-text">Gender:</div>
                       </div>
-                      <select class="custom-select">
+                      <select id="genderInput" class="custom-select">
                         <option selected>Choose...</option>
                         <option value="1">Female</option>
                         <option value="2">Male</option>
@@ -182,7 +184,7 @@
                       <div class="input-group-prepend">
                         <div class="input-group-text">Age:</div>
                       </div>
-                      <select class="custom-select">
+                      <select id="ageInput" class="custom-select">
                         <option selected>Choose...</option>
                         <option value="1">Immature Child (1-19)</option>
                         <option value="2">Young Blood (20-29)</option>
@@ -218,7 +220,7 @@
                       <div class="input-group-prepend">
                         <div class="input-group-text">Password:</div>
                       </div>
-                      <input type="text" class="form-control" id="LastNameInput" placeholder="NOT 123abc">
+                      <input type="text" class="form-control" id="passwordInput" placeholder="NOT 123abc">
                     </div>
                   </div>
                 </div>
@@ -241,7 +243,12 @@
   <!-- ******************** ACCOUNT SECTION ******************** -->
   <div class="container-fluid" id="accountSection">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-12 col-lg-8">
+          <div class="jumbotron jumbotron-profile">
+              <h1 class="display-3">My Current Book Clubs</h1>
+              <p class="lead">Book clubs I'm interested in joining later down the road:</p>
+              <hr class="my-4">
+            </div>
         <div class="card mb-3">
           <div class="row no-gutters">
             <div class="col-md-4">
@@ -288,18 +295,81 @@
                     </ul>
                 </div>
               </div>
-                
-              <!-- <div class="card-footer-horizontal">
-                <small class="text-muted">Leave this book club or fav it for later!</small>
-                <img class="ml-3" src="./images/flame.png" alt="Leave!" width="20px" height="20px">
-                <img src="./images/heart.png" alt="Fav it" width="20px" height="20px">
-              </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="./images/yp.jpeg" class="card-img" alt="Yellow Pages">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title mb-0">YELLOW PAGES
+                    <img class="ml-3" src="./images/flame.png" alt="Leave this Club!" width="20px" height="20px">
+                    <img class="ml-1" src="./images/heart.png" alt="Fav it" width="20px" height="20px">
+                </h5>
+              </div>
+
+              <div class="row">
+                <div class="col-4">
+                  <h5 class="day">DAY:</h5>
+                </div>
+                <div class="col-8">
+                  <h6 class="day-content">Sundays after church</h6>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-4">
+                      <h5 class="location">LOCATION:</h6>
+                    </div>
+                    <div class="col-8">
+                      <h6 class="location-content">Dark Alley behind the church</h6>
+                    </div>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <h5 class="members">IN THE CLUB:</h5>
+                </div>
+                <div class="col-8">
+                  <ul class="list-inline">
+                      <li class="list-inline-item members-content">Bobbie Joe</li>
+                      <li class="list-inline-item members-content">Mary Sue</li>
+                      <li class="list-inline-item members-content">John Smith</li>
+                      <li class="list-inline-item members-content">Carry Smith</li>
+                      <li class="list-inline-item members-content">Michael Bolton</li>
+                      <li class="list-inline-item members-content">Yo Momma</li>
+                      <li class="list-inline-item members-content">Jesus Himself</li>
+                      <li class="list-inline-item members-content">LeBron James</li>
+                    </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-4">
+      <div class="col-12 col-lg-4">
+          <div class="jumbotron jumbotron-profile">
+              <h1 class="display-3">My Favs</h1>
+              <p class="lead">Books I'm considering:</p>
+              <hr class="my-4">
+            </div>
+            
+          <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action">Awesome book 1
+                <img class="ml-3" src="./images/flame.png" style="float: right" alt="Leave this Club!" width="20px" height="20px">
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">Awesome book 2
+                <img class="ml-3" src="./images/flame.png" style="float: right" alt="Leave this Club!" width="20px" height="20px">
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">Awesome book 3
+                  <img class="ml-3" src="./images/flame.png" style="float: right" alt="Leave this Club!" width="20px" height="20px">
+              </a>
+              <a href="#" class="list-group-item list-group-item-action disabled">Awesome book 4
+                  <img class="ml-3" src="./images/flame.png" style="float: right" alt="Leave this Club!" width="20px" height="20px">
+              </a>
+            </div>
+      </div>
     </div>
   </div>
 
