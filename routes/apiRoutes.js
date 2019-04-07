@@ -3,8 +3,8 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all examples
   app.get("/api/bookclubs", function(req, res) {
-    bookClub.bookClubs.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+    bookClub.readers.findAll({}).then(function(bookClub) {
+      res.json(bookClub);
     });
   });
 
@@ -34,13 +34,13 @@ module.exports = function(app) {
         return res.json(result);
       })
     } else {
-      var noresult = {
-        id = -1,
-        reader_name = "User ID not found",
-        age = 0,
-        gender = "N/A",
-        email = "N/A",
-      }
+      // var noresult = {
+      //   id = 'NONE',
+      //   reader_name = "User ID not found",
+      //   age = 0,
+      //   gender = "N/A",
+      //   email = "N/A",
+      // }
       return res.json(noresult);
     }
   })
