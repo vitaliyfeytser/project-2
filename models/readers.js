@@ -2,15 +2,17 @@ module.exports = function(sequelize, DataTypes) {
   var Readers = sequelize.define("readers", {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
-    birthdate: DataTypes.DATE,
-    gender: DataTypes.TEXT,
+    city: DataTypes.STRING,
+    stateUS: DataTypes.STRING,
+    gender: DataTypes.STRING,
+    ageRange: DataTypes.STRING,
+    bio: DataTypes.TEXT,
     email: {
       type: DataTypes.TEXT,
       validate: {
         isEmail: true
       }
     }
-    // createdAt: DataTypes.TIMESTAMP
   });
   return Readers;
 };
