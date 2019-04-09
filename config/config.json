@@ -1,17 +1,16 @@
 {
   "development": {
     "username": "root",
-
     "password": null,
-
-    "database": "bookClub",
-    "host": "localhost",
+    "database": "bookClub_db",
+    "host": "127.0.0.1",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "password",
-    "database": "bookClub",
+    "password": null,
+    "database": "bookClub_db",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
