@@ -8,31 +8,32 @@ create table readers
 	id int NOT NULL AUTO_INCREMENT,
 	firstName varchar(50) NOT NULL,
     lastName varchar(50) NOT NULL,
-	birthdate date NOT NULL,
+    city varchar(100) NOT NULL,
+    stateUS varchar(50) NOT NULL,
     gender varchar(50),
-    email varchar(50),
+	ageRange int NOT NULL,
+    bio varchar(500),
+    email varchar(100),
     createdAt datetime, 
     updatedAt datetime,
-    -- current
 	PRIMARY KEY (id)
-    -- PRIMARY KEY (user_name)
 );
 
-INSERT INTO readers (firstName, lastName, birthdate, gender, email, createdAt, updatedAt) VALUES ('Kristal', 'Murphy','1985/01/01', 'female', 'iknow@mystuff.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO readers (firstName, lastName, birthdate, gender, email, createdAt, updatedAt) VALUES ('Tyler', 'Niccols','1979/02/02', 'male', 'awesomecoder@youknowthis.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO readers (firstName, lastName, birthdate, gender, email, createdAt, updatedAt) VALUES ('Vitaliy', 'Feyster', '1982/03/03', 'male','theukrainetrain@muzhik.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO readers (firstName, lastName, birthdate, gender, email, createdAt, updatedAt) VALUES ('Alex', 'Tardif', '1979/04/04', 'male', 'myfrontendisbetter@thanyours.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO readers (firstName, lastName, birthdate, gender, email, createdAt, updatedAt) VALUES ('Patrick', 'Thompson','1980/03/18', 'male', 'pt@alongfortheride.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO readers (firstName, lastName, birthdate, gender, email, createdAt, updatedAt) VALUES ('Captain', 'Marvel', '1988/06/06', 'female', 'badmamajama@marvel.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO readers (firstName, lastName, birthdate, gender, email, createdAt, updatedAt) VALUES ('Wonder', 'Wonder', '1984/07/07', 'female','imawonder@dc.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO readers (firstName, lastName, birthdate, gender, email, createdAt, updatedAt) VALUES ('Billy', 'Gruff', '1960/04/04', 'male', 'thegoat@gruff.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO readers (firstName, lastName, birthdate, gender, email, createdAt, updatedAt) VALUES ('Joe', 'Bob', '1973/02/02', 'male', 'jb@redneck.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO readers (firstName, lastName, birthdate, gender, email, createdAt, updatedAt) VALUES ('Super', 'Man', '1965/02/02', 'male', 'imsuper@dc.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO readers (firstName, lastName, birthdate, gender, email, createdAt, updatedAt) VALUES ('Aunt', 'Sally', '1959/03/03', 'female', 'icanhelp@withalgebra.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO readers (firstName, lastName, birthdate, gender, email, createdAt, updatedAt) VALUES ('Bille', 'Jean', '1969/04/04', 'female','bj@notmylover.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO readers (firstName, lastName, birthdate, gender, email, createdAt, updatedAt) VALUES ('Mark', 'Morris', '1970/01/01', 'male','onehit@wonder.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO readers (firstName, lastName, birthdate, gender, email, createdAt, updatedAt) VALUES ('Leo', 'Qiu', '1992/04/15', 'male', 'leo@goesger.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO readers (firstName, lastName, birthdate, gender, email, createdAt, updatedAt) VALUES ('Mark', 'Davis', '1963/02/02', 'male', 'thehead@raider.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO readers (firstName, lastName, city, stateUS, gender, ageRange, bio, email, createdAt, updatedAt) VALUES ('Kristal', 'Murphy', 1, "Sacramento", "CA", 'female', 0, "A short bio.", 'iknow@mystuff.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO readers (firstName, lastName, city, stateUS, gender, ageRange, bio, email, createdAt, updatedAt) VALUES ('Tyler', 'Niccols', 1, "Sacramento", "CA", 'male', 0, "A short bio.", 'awesomecoder@youknowthis.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO readers (firstName, lastName, city, stateUS, gender, ageRange, bio, email, createdAt, updatedAt) VALUES ('Vitaliy', 'Feyster', 1, "Sacramento", "CA", 'male','theukrainetrain@muzhik.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO readers (firstName, lastName, city, stateUS, gender, ageRange, bio, email, createdAt, updatedAt) VALUES ('Alex', 'Tardif', 1, "Sacramento", "CA", 'male', 0, "A short bio.", 'myfrontendisbetter@thanyours.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO readers (firstName, lastName, city, stateUS, gender, ageRange, bio, email, createdAt, updatedAt) VALUES ('Patrick', 'Thompson', 1, "Sacramento", "CA", 'male', 0, "A short bio.", 'pt@alongfortheride.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO readers (firstName, lastName, city, stateUS, gender, ageRange, bio, email, createdAt, updatedAt) VALUES ('Captain', 'Marvel', 3, "Sacramento", "CA", 'female', 0, "A short bio.", 'badmamajama@marvel.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO readers (firstName, lastName, city, stateUS, gender, ageRange, bio, email, createdAt, updatedAt) VALUES ('Wonder', 'Wonder', 3, "Sacramento", "CA", 'female','imawonder@dc.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO readers (firstName, lastName, city, stateUS, gender, ageRange, bio, email, createdAt, updatedAt) VALUES ('Billy', 'Gruff', 3, "Sacramento", "CA", 'male', 0, "A short bio.", 'thegoat@gruff.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO readers (firstName, lastName, city, stateUS, gender, ageRange, bio, email, createdAt, updatedAt) VALUES ('Joe', 'Bob', 4, "Sacramento", "CA", 'male', 0, "A short bio.", 'jb@redneck.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO readers (firstName, lastName, city, stateUS, gender, ageRange, bio, email, createdAt, updatedAt) VALUES ('Super', 'Man', 4, "Sacramento", "CA", 'male', 0, "A short bio.", 'imsuper@dc.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO readers (firstName, lastName, city, stateUS, gender, ageRange, bio, email, createdAt, updatedAt) VALUES ('Aunt', 'Sally', 4, "Sacramento", "CA", 'female', 0, "A short bio.", 'icanhelp@withalgebra.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO readers (firstName, lastName, city, stateUS, gender, ageRange, bio, email, createdAt, updatedAt) VALUES ('Bille', 'Jean', 6, "Sacramento", "CA", 'female','bj@notmylover.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO readers (firstName, lastName, city, stateUS, gender, ageRange, bio, email, createdAt, updatedAt) VALUES ('Mark', 'Morris', 6, "Sacramento", "CA", 'male','onehit@wonder.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO readers (firstName, lastName, city, stateUS, gender, ageRange, bio, email, createdAt, updatedAt) VALUES ('Leo', 'Qiu', 6, "Sacramento", "CA", 'male', 0, "A short bio.", 'leo@goesger.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO readers (firstName, lastName, city, stateUS, gender, ageRange, bio, email, createdAt, updatedAt) VALUES ('Mark', 'Davis', 6, "Sacramento", "CA", 'male', 0, "A short bio.", 'thehead@raider.com', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
 
 create table locations
 (
