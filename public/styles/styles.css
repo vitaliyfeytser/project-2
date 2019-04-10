@@ -114,11 +114,11 @@ footer {
 }
 
 #mainSection {
-  padding: 5%;
+  padding: 4% 15% 10% 15%;
 }
 
 #detailsSection {
-  padding: 5%;
+  padding: 10% 5%;
   background-color: #869b84;
 }
 
@@ -129,22 +129,22 @@ footer {
 
 #accountSection {
   background-color: #307f81;
-  padding: 5%;
+  padding: 10% 5%;
 }
 
 #myBtn {
   display: none;
   position: fixed;
-  bottom: 55px;
-  right: 10px;
+  bottom: 5px;
+  right: 5px;
   z-index: 99 !important;
   border: none;
   outline: none;
   background-color: #666666;
   color: white;
   cursor: pointer;
-  padding: 15px;
-  border-radius: 5px;
+  padding: 10px;
+  border-radius: 4px;
   font-size: 0.8rem;
   line-height: 0.5rem;
 }
@@ -206,5 +206,10 @@ hr {
   .display-3 {
     font-size: 3rem;
   }
+}
 
+@media only screen and (max-width: 768px) {
+  #mainSection {
+    padding: 5% 0% 5% 0%;
+  }
 }
