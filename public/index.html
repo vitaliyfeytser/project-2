@@ -51,8 +51,22 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <div class="navbar-nav ml-auto">
+          
           <button type="button" id="loginBtn" class="btn btn-light btn-sm" data-toggle="modal"
             data-target="#popUpWindow">LOG IN</button>
+
+            <div class="input-group">
+              <div class="input-group justify-content-center">
+                <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">NAME PLACEHOLDER</button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Profile</a>
+                  <a class="dropdown-item" href="#">Logout</a>
+                </div>
+              </div>
+            </div>
+
+
           <a class="nav-item nav-link text-center" href="##mainSection">HOME</a>
           <a class="nav-item nav-link text-center" href="#weather">BOOKS</a>
           <a class="nav-item nav-link text-center" href="#apod">MEETUPS</a>
@@ -60,6 +74,14 @@
       </div>
     </div>
   </nav>
+  <div class="modal fade" id="popUpWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content" id="sign-in-modal">
+          <div class="modal-body" id="firebaseui-auth-container"></div>
+      </div>
+  </div>
+</div>
 
   <!-- ******************** MAIN SECTION ******************** -->
   <div class="container-fluid" id="mainSection">
@@ -78,8 +100,9 @@
 
             <div class="card-footer">
               <small class="text-muted">Join this book club or fav it for later!</small>
+      ageRange: reader.age,
               <img class="ml-3" src="./images/arrow.png" alt="Join This Book Club!" width="20px" height="20px" data-toggle="tooltip" data-placement="top" title="Join This Book Club!">
-              <img src="./images/heart.png" alt="Fav It For Later!" width="20px" height="20px" data-toggle="tooltip" data-placement="top" title="Fav It For Later!">
+              <img class="favorInput" data-book="1" src="./images/heart.png" alt="Fav It For Later!" width="20px" height="20px" data-toggle="tooltip" data-placement="top" title="Fav It For Later!">
             </div>
           </div>
           <div class="card">
@@ -94,7 +117,7 @@
             <div class="card-footer">
               <small class="text-muted">Join this book club or fav it for later!</small>
               <img class="ml-3" src="./images/arrow.png" alt="Join This Book Club!" width="20px" height="20px" data-toggle="tooltip" data-placement="top" title="Join This Book Club!">
-              <img src="./images/heart.png" alt="Fav It For Later!" width="20px" height="20px" data-toggle="tooltip" data-placement="top" title="Fav It For Later!">
+              <img class="favorInput" data-book="2" src="./images/heart.png" alt="Fav It For Later!" width="20px" height="20px" data-toggle="tooltip" data-placement="top" title="Fav It For Later!">
             </div>
           </div>
           <div class="card">
@@ -108,7 +131,7 @@
             <div class="card-footer">
               <small class="text-muted">Join this book club or fav it for later!</small>
               <img class="ml-3" src="./images/arrow.png" alt="Join This Book Club!" width="20px" height="20px" data-toggle="tooltip" data-placement="top" title="Join This Book Club!">
-              <img src="./images/heart.png" alt="Fav It For Later!" width="20px" height="20px" data-toggle="tooltip" data-placement="top" title="Fav It For Later!">
+              <img class="favorInput" data-book="3" src="./images/heart.png" alt="Fav It For Later!" width="20px" height="20px" data-toggle="tooltip" data-placement="top" title="Fav It For Later!">
             </div>
           </div>
         </div>
@@ -324,7 +347,7 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Email:</div>
                   </div>
-                  <input type="email" class="form-control" id="emailInput" placeholder="shithead@us.gov">
+                  <input type="email" class="form-control" id="emailInput" placeholder="littleHands@us.gov">
                 </div>
               </div>
               <div class="col-12 col-md-6 col-lg-5">
@@ -495,15 +518,17 @@
   <!-- ******************** LIBRARIES and SCRIPTS LINKS ******************** -->
 
   <!-- IMPORTANT ORDER FOR BOOTSTRAP NAVIGATION ON MOBILE DEVICES: jQuery JS first, then Popper JS, then Bootstrap JS -->
+
   <!-- Krista'ls Javascript - reads new user values in the sign-up form and submits to database -->
   <script src="./js/html.js"></script>
   <!-- Vitaliy's JS - Dynamic creation and manipulation of HTML elements -->
   <script src="./js/book.js"></script>
 
-
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script src="./js/html.js"></script>
 
     <!--  THIS SCRIPT WILL INITIALIZE ALL TOOLTIPS ON THIS PAGE:  -->
   <script>
@@ -529,6 +554,16 @@
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       }
       </script>
+
+      <!-- Link to Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css">
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+
+    <script src="./js/login.js"></script>
 
 </body>
 
