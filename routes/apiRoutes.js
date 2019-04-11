@@ -139,6 +139,7 @@ app.post("/api/favor", function(req, res) {
 
   res.status(204).end();
 });
+
   //Example of app.post if above code does not work/if we need to define the object more clearly
   //   app.post("/api/new", function(req, res) {
   //     // Take the request...
