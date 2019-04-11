@@ -93,7 +93,7 @@ module.exports = function(app) {
   app.post("/api/reader", function(req, res) {
     var reader = req.body;
     console.log(reader);
-    
+
     db.readers.create({
       firstName: reader.firstName,
       lastName: reader.lastName,
@@ -105,9 +105,9 @@ module.exports = function(app) {
       bio: reader.bio,
       password: reader.password
     });
- 
+
     res.status(204).end();
-});
+  });
   //Example of app.post if above code does not work/if we need to define the object more clearly
   //   app.post("/api/new", function(req, res) {
   //     // Take the request...
