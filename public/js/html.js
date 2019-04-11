@@ -1,6 +1,7 @@
 //------------Kristal Murphy ---------------------//
 // when user clicks 
 $("#btnSubmitProfile").on("click", function (event) {
+    console.log("Click");
     event.preventDefault();
     // make a newPerson obj
     var newPerson = {
@@ -9,13 +10,13 @@ $("#btnSubmitProfile").on("click", function (event) {
         // last name from last name input
         lastName: $("#LastNameInput").val(),
         // city from age input
-        City: $("#cityInput").val(),
+        city: $("#cityInput").val(),
         // points from force-points input
         state: $("#stateInput").val(),
         //gender input 
-        gender: $("#genderInput option:select").val(),
+        gender: $("#genderInput option:selected").val(),
         // age from the age imput 
-        age: $("#ageInput option:select").val(),
+        age: $("#ageInput option:selected").val(),
         //email from the emial input 
         email: $("#emailInput").val(),
         // bio from the bio input
