@@ -90,31 +90,24 @@ module.exports = function(app) {
   //   });
   // });
   //Create a new example
-  // app.post("/api/reader", function(req, res) {
-  //   var reader = req.body;
-  //   console.log(reader);
-  //   console.log(res);
-  //   reader.create({
-  //     reader_name: reader.firstName,
-  //     age: reader.age,
-  //     gender: reader.gender,
-  //     email: reader.email,
-  //   })
+  app.post("/api/reader", function(req, res) {
+    var reader = req.body;
+    console.log(reader);
+    
+    db.readers.create({
+      firstName: reader.firstName,
+      lastName: reader.lastName,
+      city: reader.city,
+      stateUS: reader.state,
+      gender: reader.gender,
+      ageRange: reader.age,
+      email: reader.email,
+      bio: reader.bio,
+      password: reader.password
+    });
  
-  //   // newreader.create({
-  //   //   firstName: reader.firstName,
-  //   //   lastName: reader.lastName,
-  //   //   city: reader.city,
-  //   //   state: reader.state,
-    //   gender: reader.gender,
-    //   age: reader.age,
-    //   email: reader.email,
-    //   bio: reader.bio,
-    //   password: reader.password
-    // });
- 
-    // res.status(204).end();
-  // });
+    res.status(204).end();
+});
   //Example of app.post if above code does not work/if we need to define the object more clearly
   //   app.post("/api/new", function(req, res) {
   //     // Take the request...
