@@ -32,3 +32,18 @@ $("#btnSubmitProfile").on("click", function (event) {
             console.log(data);
         });
 });
+
+
+$(".favorInput").on("click", function (event) {
+    console.log("Click");
+    event.preventDefault();
+
+    var favorBook = {
+        bookId: $(this).data("book"),
+        readerId: "1"
+    };
+    $.post("/api/favor", favorBook)
+        .then(function (data) {
+            console.log(data);
+        })
+});

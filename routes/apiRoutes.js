@@ -94,19 +94,50 @@ module.exports = function(app) {
     var reader = req.body;
     console.log(reader);
     
-    db.readers.create({
-      firstName: reader.firstName,
-      lastName: reader.lastName,
-      city: reader.city,
-      stateUS: reader.state,
-      gender: reader.gender,
-      ageRange: reader.age,
-      email: reader.email,
-      bio: reader.bio,
-      password: reader.password
-    });
+    db.readers.findOne({where: {email: reader.email}}).then(function(user){
+      if(user){
+        res.status(400).send({msg: "user already exist"})
+      } else {
+        db.readers.create({
+          firstName: reader.firstName,
+          lastName: reader.lastName,
+          city: reader.city,
+          stateUS: reader.state,
+          gender: reader.gender,
+          ageRange: reader.age,
+          email: reader.email,
+          bio: reader.bio,
+          password: reader.password
+        }).then(function(newUser){
+          res.staus(200).send(newUser)
+        })
+      }
+    }).catch(function(){
+      db.readers.create({
+        firstName: reader.firstName,
+        lastName: reader.lastName,
+        city: reader.city,
+        stateUS: reader.state,
+        gender: reader.gender,
+        ageRange: reader.age,
+        email: reader.email,
+        bio: reader.bio,
+        password: reader.password
+      }).then(function(newUser){
+        res.staus(200).send(newUser)
+      })
+    })
  
-    res.status(204).end();
+});
+
+app.post("/api/favor", function(req, res) {
+  console.log(req.body);
+  
+  db.favoriteBooks.create(
+    req.body
+   );
+
+  res.status(204).end();
 });
   //Example of app.post if above code does not work/if we need to define the object more clearly
   //   app.post("/api/new", function(req, res) {
