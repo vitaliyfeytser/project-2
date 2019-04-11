@@ -114,11 +114,11 @@ footer {
 }
 
 #mainSection {
-  padding: 5% 10% 5% 10%;
+  padding: 4% 15% 10% 15%;
 }
 
 #detailsSection {
-  padding: 5%;
+  padding: 10% 5%;
   background-color: #869b84;
 }
 
@@ -129,7 +129,7 @@ footer {
 
 #accountSection {
   background-color: #307f81;
-  padding: 5%;
+  padding: 10% 5%;
 }
 
 #myBtn {
