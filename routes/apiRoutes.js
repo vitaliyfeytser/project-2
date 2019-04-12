@@ -1,4 +1,6 @@
 var db = require("../models");
+var moment = require("moment");
+moment().format();
 
 module.exports = function(app) {
   ////////////////////////////////////////////////////////////
@@ -33,12 +35,11 @@ module.exports = function(app) {
       res.json(results);
     });
   });
+
   ////////////////////////////////////////////////////////////
   // GET route for getting ONE item from table's each dataset
   app.get("/api/bookclubs/:bookClubID", function(req, res) {
-    console.log("---GET request is run here");
     if (req.params.bookClubID) {
-      console.log("---if statement is run here");
       db.bookClubs
         .findOne({
           where: {
@@ -49,13 +50,47 @@ module.exports = function(app) {
           return res.json(results);
         });
     } else {
-      console.log("---else is run here");
       console.log("ERROR: This entry does not exist.");
 
       db.bookClubs.findAll({}).then(function(all) {
         // res.json(vit);
         return res.json(all);
       });
+    }
+  });
+
+  // CURRENT PROMOTED BOOKS ROUTE
+  app.get("/api/promotedbooks/current", function(req, res) {
+    var currentDate = moment(new Date()).format("MM-YYYY");
+    db.promotedBooks
+      .findAll({
+        where: {
+          monthAndYearPromoted: currentDate
+        }
+      })
+      .then(function(results) {
+        return res.json(results);
+      });
+  });
+
+  // PROMOTED BOOKS BY MONTH AND YEAR ROUTE
+  app.get("/api/promotedbooks/:monthAndYearPromoted", function(req, res) {
+    if (req.params.monthAndYearPromoted) {
+      db.promotedBooks
+        .findAll({
+          where: {
+            monthAndYearPromoted: req.params.monthAndYearPromoted
+          }
+        })
+        .then(function(results) {
+          return res.json(results);
+        });
+    } else {
+      console.log("ERROR: This entry does not exist.");
+      db.promotedBooks.findAll({}).then(function(all) {
+        return res.json(all);
+      });
+      // return res.json(currentDate);
     }
   });
 
@@ -88,7 +123,7 @@ module.exports = function(app) {
   //     res.json(dbExample);
   //   });
   // });
-  
+
   //Create a new reader
   app.post("/api/reader", function(req, res) {
     var reader = req.body;
@@ -143,6 +178,7 @@ module.exports = function(app) {
 
     res.status(204).end();
   });
+
   //Example of app.post if above code does not work/if we need to define the object more clearly
   //   app.post("/api/new", function(req, res) {
   //     // Take the request...
