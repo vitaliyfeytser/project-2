@@ -19,18 +19,24 @@ var handleUserNameDisplay = function() {
 };
 handleUserNameDisplay();
 
-var currentPromotedBooks = function() {
-
-}
+// var currentPromotedBooks = function() {
+// }
 
 // TOGGLES BOOKCLUB DETAILS SECTION IN INDEX.HTML
 $(document).ready(function() {
   $(".promoted-books-at-top").click(function() {
-
-
     $("#detailsSection").collapse("toggle");
   });
+  // TOGGLES SIGN-UP FORM IN INDEX.HTML
+  $("#loginBtn").click(function() {
+    $("#formSection").collapse("toggle");
+  });
 });
+
+// // FLIPS SIGN-UP FORM IN INDEX.HTML
+// $("#card").click(function() {
+//   $("#card").flip();
+// });
 
 // The API object contains methods for each kind of request we'll make
 var API = {

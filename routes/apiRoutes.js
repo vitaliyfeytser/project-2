@@ -35,6 +35,7 @@ module.exports = function(app) {
       res.json(results);
     });
   });
+
   ////////////////////////////////////////////////////////////
   // GET route for getting ONE item from table's each dataset
   app.get("/api/bookclubs/:bookClubID", function(req, res) {
@@ -72,32 +73,26 @@ module.exports = function(app) {
       });
   });
 
-  // // PROMOTED BOOKS BY MONTH AND YEAR ROUTE
-  // app.get("/api/promotedbooks/:monthAndYearPromoted", function(req, res) {
-  //   var currentDate = moment(new Date()).format("MM-YYYY");
-  //   // var currentDateString = "";
-  //   // currentDateString.concat(currentDate, "-01");
-  //   if (req.params.monthAndYearPromoted) {
-  //     db.promotedBooks
-  //       .findAll({
-  //         where: {
-  //           monthAndYearPromoted: req.params.monthAndYearPromoted
-  //         }
-  //       })
-  //       .then(function(results) {
-  //         return res.json(results);
-  //       });
-  //   } else {
-  //     console.log("ERROR: This entry does not exist.");
-
-  //     // db.promotedBooks.findAll({}).then(function(all) {
-  //     //   // res.json(vit);
-  //     //   return res.json(all);
-
-  //     // });
-  //     return res.json(currentDate);
-  //   }
-  // });
+  // PROMOTED BOOKS BY MONTH AND YEAR ROUTE
+  app.get("/api/promotedbooks/:monthAndYearPromoted", function(req, res) {
+    if (req.params.monthAndYearPromoted) {
+      db.promotedBooks
+        .findAll({
+          where: {
+            monthAndYearPromoted: req.params.monthAndYearPromoted
+          }
+        })
+        .then(function(results) {
+          return res.json(results);
+        });
+    } else {
+      console.log("ERROR: This entry does not exist.");
+      db.promotedBooks.findAll({}).then(function(all) {
+        return res.json(all);
+      });
+      // return res.json(currentDate);
+    }
+  });
 
   app.get("/api/readers/:readerID", function(req, res) {
     if (req.params.readerID !== null) {
@@ -128,6 +123,7 @@ module.exports = function(app) {
   //     res.json(dbExample);
   //   });
   // });
+
   //Create a new example
   app.post("/api/reader", function(req, res) {
     var reader = req.body;
