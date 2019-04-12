@@ -27,9 +27,16 @@ $(document).ready(function() {
   $(".promoted-books-at-top").click(function() {
     $("#detailsSection").collapse("toggle");
   });
-  // TOGGLES SIGN-UP FORM IN INDEX.HTML
+  // TOGGLES LOG-IN FORM IN INDEX.HTML
   $("#loginBtn").click(function() {
     $("#formSection").collapse("toggle");
+    $(".front").collapse("show");
+    $(".back").collapse("hide");
+  });
+  // TOGGLES LOGI-IN TO SIGN-UP FORM IN INDEX.HTML
+  $("#btnSignUp").click(function() {
+    $(".front").collapse("hide");
+    $(".back").collapse("show");
   });
 });
 
