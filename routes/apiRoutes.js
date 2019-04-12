@@ -62,6 +62,7 @@ module.exports = function(app) {
   // CURRENT PROMOTED BOOKS ROUTE
   app.get("/api/promotedbooks/current", function(req, res) {
     var currentDate = moment(new Date()).format("MM-YYYY");
+    // var currentDate = "05-2019";
     db.promotedBooks
       .findAll({
         where: {
