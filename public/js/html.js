@@ -37,11 +37,12 @@ $("#btnSubmitProfile").on("click", function (event) {
 $(".favorInput").on("click", function (event) {
     console.log("Click");
     event.preventDefault();
-
+ // favor book insert in the favor book table in SQL 
     var favorBook = {
         bookId: $(this).data("book"),
         readerId: "1"
     };
+    // send an AJAX POST-request with jQuery
     $.post("/api/favor", favorBook)
         .then(function (data) {
             console.log(data);

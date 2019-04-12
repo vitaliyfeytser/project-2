@@ -96,8 +96,10 @@ module.exports = function(app) {
     
     db.readers.findOne({where: {email: reader.email}}).then(function(user){
       if(user){
+        // throw a error for email already created
         res.status(400).send({msg: "user already exist"})
       } else {
+        //create the new user
         db.readers.create({
           firstName: reader.firstName,
           lastName: reader.lastName,
@@ -112,6 +114,7 @@ module.exports = function(app) {
           res.staus(200).send(newUser)
         })
       }
+      // catches the new user and inserted into the new user. 
     }).catch(function(){
       db.readers.create({
         firstName: reader.firstName,
