@@ -45,67 +45,57 @@
 
 <body>
 
-  <!-- ******************** Navigation ******************** -->
-  <nav class="navbar navbar-dark bg-dark navbar-expand-md">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="images/logo.svg" width="48px" height="40px" alt="Logo">
-        <span class="pl-2">COOL KIDS BOOK CLUB</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <div class="navbar-nav ml-auto">
+  <body>
 
-          <button type="button" id="loginBtn" class="btn btn-light btn-sm" data-toggle="modal"
-            data-target="#popUpWindow">LOG IN</button>
-
-          <!-- <<<<<<< jquery-to-html -- from Vitaliy's copy
-          <div class="input-group" id="user-name-toggle" style="display: none">
-            <div class="input-group justify-content-center">
-              <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" data-user="0"
-                id="user-name-display" aria-haspopup="true" aria-expanded="false">NAME PLACEHOLDER</button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Logout</a>
-======= -->
-          <div class="input-group" id="user-name-toggle" style="display: none">
-            <!-- <div class="input-group"> -->
+    <!-- ******************** Navigation ******************** -->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.svg" width="48px" height="40px" alt="Logo">
+          <span class="pl-2">COOL KIDS BOOK CLUB</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <div class="navbar-nav ml-auto">
+  
+            <button type="button" id="loginBtn" class="btn btn-light btn-sm" data-toggle="modal"
+              data-target="#popUpWindow">LOG IN</button>
+  
+            <div class="input-group" id="user-name-toggle" style="display: none">
               <div class="input-group justify-content-center">
-                <button class="btn btn-light dropdown-toggle" type="button" id="memberDropDown" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">NAME PLACEHOLDER</button>
+                <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" data-user="0"
+                  id="user-name-display" aria-haspopup="true" aria-expanded="false">NAME PLACEHOLDER</button>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" id="logoutBtn" href="#">Logout</a>
+                  <a class="dropdown-item" href="#">Profile</a>
+                  <a class="dropdown-item" href="#">Logout</a>
                 </div>
-
               </div>
             </div>
-          <!-- </div> -->
-        </div>
-
-
-        <a class="nav-item nav-link text-center" href="##mainSection">HOME</a>
-        <a class="nav-item nav-link text-center" href="#weather">BOOKS</a>
-        <a class="nav-item nav-link text-center" href="#apod">MEETUPS</a>
-      </div>
-    </div>
-    </div>
-  </nav>
-
-  <!-- firebase sign-in modal -->
-  <div class="modal fade" id="popUpWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content" id="sign-in-modal">
-        <div class="modal-body" id="firebaseui-auth-container">
-
+  
+  
+            <a class="nav-item nav-link text-center" href="##mainSection">HOME</a>
+            <a class="nav-item nav-link text-center" href="#weather">BOOKS</a>
+            <a class="nav-item nav-link text-center" href="#apod">MEETUPS</a>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- firebase sign-in modal closing div tags -->
+    </nav>
+  
+    <!-- firebase sign-in modal -->
+    <!-- <div class="modal fade" id="popUpWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" id="sign-in-modal">
+          <div class="modal-body" id="firebaseui-auth-container">
+            
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- firebase sign-in modal closing div tags -->
 
   <!-- ******************** LOG-IN FORM SECTION ******************** -->
   <div class="container-fluid collapse" id="formSection">
@@ -468,26 +458,12 @@
   <div class="container-fluid" id="accountSection">
     <div class="row">
       <div class="col-12 col-lg-8">
+
         <div class="jumbotron jumbotron-profile">
           <h1 class="display-3">My Current Book Clubs</h1>
           <p class="lead">Book clubs I'm interested in joining later down the road:</p>
-<<<<<<< HEAD
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-6 col-lg-5">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">Email:</div>
-                </div>
-                <input type="text" class="form-control" id="userEmail" placeholder="123@example.com">
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-5">
-              <button type="submit" id="emailLogin" class="btn btn-dark">Login into your account here</button>
-            </div>
-          </div>
-=======
->>>>>>> b083e743877d57e6d1b9f1c761438ffc0fb196b4
         </div>
+
         <div class="card mb-3">
           <div class="row no-gutters">
             <div class="col-md-4">
