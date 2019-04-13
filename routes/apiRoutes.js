@@ -87,7 +87,7 @@ module.exports = function (app) {
       db.favoriteBooks
         .findAll({
           where: {
-            readerId: req.params.readerId
+            id: req.params.readerId
           }
         })
         .then(function (results) {
@@ -153,7 +153,7 @@ module.exports = function (app) {
       db.readers
         .findOne({
           where: {
-            readerId: req.params.readerId
+            id: req.params.readerId
           }
         })
         .then(function (result) {
