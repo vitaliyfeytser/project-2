@@ -7,12 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     gender: DataTypes.STRING,
     ageRange: DataTypes.STRING,
     bio: DataTypes.TEXT,
-    email: {
-      type: DataTypes.TEXT,
-      validate: {
-        isEmail: true
-      }
-    }
+    email: DataTypes.TEXT,
   });
   return Readers;
 };
