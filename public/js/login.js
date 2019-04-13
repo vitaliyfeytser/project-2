@@ -26,7 +26,7 @@ $(document).ready(function() {
         requireDisplayName: false
       }
     ],
-    callbacks: {
+    callbacks:{
       signInFailureUrl: "./newAccount.html"
     }
   };
