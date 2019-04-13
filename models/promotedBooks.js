@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     author: DataTypes.STRING,
     caption: DataTypes.STRING,
     coverImage: DataTypes.STRING,
-    monthAndYearPromoted: DataTypes.DATE
+    monthAndYearPromoted: DataTypes.STRING
   });
   return promotedBooks;
 };
