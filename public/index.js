@@ -8,8 +8,9 @@
 // // var $submitBtn = $("#submit");
 // var $cardDeck = $(".card-deck");
 
+// IF SUCCESS WITH FIREBASE => SET THIS VARIABLE FROM OUR DATABASE
 var loggedInUserId = '3';
-
+var currentlyViewdBook = 0;
 // The API object contains methods for each kind of request we'll make
 var API = {
   // saveExample: function (example) {
@@ -22,6 +23,18 @@ var API = {
   //     data: JSON.stringify(example)
   //   });
   // },
+  getReadersFaves: function () {
+    return $.ajax({
+      url: "/api/favoritebooks/" + loggedInUserId,
+      type: "GET"
+    });
+  },
+  getAllReaders: function () {
+    return $.ajax({
+      url: "/api/readers/",
+      type: "GET"
+    });
+  },
   getCurrentReader: function () {
     return $.ajax({
       url: "/api/readers/" + loggedInUserId,
@@ -34,6 +47,18 @@ var API = {
       type: "GET"
     });
   },
+  getLocations: function () {
+    return $.ajax({
+      url: "/api/locations",
+      type: "GET"
+    });
+  },
+  getBookClubsByBook: function (bookID) {
+    return $.ajax({
+      url: "/api/bookclubs/" + bookID,
+      type: "GET"
+    });
+  },
   // deleteExample: function (id) {
   //   return $.ajax({
   //     url: "api/examples/" + id,
@@ -43,9 +68,21 @@ var API = {
 };
 
 var setEventListeners = function () {
-  $(".promoted-books-at-top").click(function () {
-    $("#detailsSection").collapse("toggle");
+  // VIEW COLLAPSE TOGGLER FOR JOINING A BOOKCLUB DETAILS
+  $(".promoted-books-at-top").on("click", function (event) {
+    // console.log("Join Click");
+    event.preventDefault();
+    var promotedBook = {
+      bookId: $(this).parent().data("promoted-books-id"),
+      readerId: loggedInUserId,
+    };
+    if (currentlyViewdBook === promotedBook.bookId) {
+      $("#detailsSection").collapse("toggle");
+    } else {
+      $("#detailsSection").collapse("show");
+    }
   });
+
   // TOGGLES LOG-IN FORM IN INDEX.HTML
   $("#loginBtn").click(function () {
     $("#formSection").collapse("toggle");
@@ -59,19 +96,82 @@ var setEventListeners = function () {
   });
   // FAVORITE BUTTON CLICK EVENT LISTENER <= Kristal's Code
   $(".favorInput").on("click", function (event) {
-    console.log("Click");
     event.preventDefault();
     // favor book insert in the favor book table in SQL
     var favorBook = {
       bookId: $(this).data("book"),
-      // !!!! REPLACE '1' WITH THE SIGNED IN USERS 'READER ID'  !!!!!!
-      readerId: "1"
+      readerId: loggedInUserId
     };
     // send an AJAX POST-request with jQuery
     $.post("/api/favor", favorBook).then(function (data) {
       console.log(data);
     });
   });
+
+  // JOIN BOOKCLUB BUTTON CLICK EVENT LISTENER <= Vitaliy's Code
+  $(".promoted-books-at-top").on("click", function (event) {
+    // console.log("Join Click");
+    event.preventDefault();
+
+    var promotedBook = {
+      bookId: $(this).parent().data("promoted-books-id"),
+      readerId: loggedInUserId
+    };
+    // console.log("promotedBook: ", promotedBook);
+
+    $(".clubDetailsCard").hide();
+    var selection = 'book-' + promotedBook.bookId + '-clubs';
+    // console.log("selection: ", selection);
+    $("#" + selection).show();
+    // SETS A VALUE FOR THE COLLAPSE FUNCTION OF THE VIEW CONTROLLER
+    currentlyViewdBook = promotedBook.bookId;
+
+    API.getBookClubsByBook(promotedBook.bookId).then(function (data) {
+      console.log("-------------getBookClubsByBook(): ", data);
+      return data;
+      // Get references to page elements
+      // var $select1 = $("#FormControlSelect1");
+      // var $times = data.map(function (locations) {
+      //   var $option = $(
+      //     "<option>", {
+      //       text: locations.meetingTimes
+      //     })
+      //   return $option;
+      // });
+      // $select1.html($times);
+    });
+
+    API.getLocations().then(function (data) {
+      console.log("-------------getLocations(): ", data);
+      // Get references to page elements
+      var $select1 = $("#FormControlSelect1");
+      var $times = data.map(function (locations) {
+        var $option = $(
+          "<option>", {
+            text: locations.meetingTimes
+          })
+        return $option;
+      });
+      $select1.html($times);
+    });
+    
+    API.getLocations().then(function (resp) {
+      console.log("-------------getLocations(): ", resp);
+      // Get references to page elements
+      var $select2 = $("#FormControlSelect2");
+      var $places = resp.map(function (locations) {
+        var $option = $(
+          "<option>", {
+            text: locations.placeAddress
+          })
+        return $option;
+      });
+      $select2.html($places);
+    });
+
+  });
+
+
 };
 
 var handleUserNameDisplay = function () {
@@ -80,10 +180,25 @@ var handleUserNameDisplay = function () {
   var $dataUser = $("#user-name-display").attr("data-user", loggedInUserId);
 
   API.getCurrentReader().then(function (data) {
-    console.log("-------------getCurrentReader(): ", data);
+    // console.log("-------------getCurrentReader(): ", data);
     // Get references to page elements
     var $userNameDisplay = $("#user-name-display");
     return $userNameDisplay.text(data.firstName + " " + data.lastName);
+  });
+
+  API.getReadersFaves().then(function (resp) {
+    console.log("-------------getReadersFaves(): ", resp);
+    // Get references to page elements
+    var $booksLiked = $("#booksLiked");
+    var $books = resp.map(function (books) {
+      var $option = $(
+        "<a>", {
+          class: "list-group-item",
+          text: books.bookId
+        })
+      return $option;
+    });
+    $booksLiked.html($books);
   });
 
   if ($dataUser === "0") {
@@ -127,7 +242,7 @@ var refreshCurrentPromotedBooks = function () {
             })
           ),
           $("<div>", {
-            class: "card-footer"
+            class: "card-footer promoted-books-at-top"
           }).append(
             $("<small>", {
               class: "text-muted",
@@ -160,13 +275,49 @@ var refreshCurrentPromotedBooks = function () {
         )
       return $bookDiv;
     });
-    // $cardDeck.empty();
-    // $cardDeck.append($currentPromotedBooks);
-
     $cardDeck.html($currentPromotedBooks);
     setEventListeners();
   });
 };
+
+var promotedClubDetails = function () {
+  API.getPromotedBooks().then(function (data) {
+    console.log("-------------getPromotedBooks(): ", data);
+    // Get references to page elements
+    var $clubDetails = $("#clubDetails");
+    var $currentPromotedBooks = data.map(function (books) {
+      var $bookDiv = $(
+        "<div>", {
+          class: "card clubDetailsCard",
+          id: "book-" + books.id + "-clubs",
+          "data-promoted-books-id": books.id
+        }).append(
+          $("<img>", {
+            class: "card-img-top",
+            src: books.coverImage,
+            alt: "Book image was not found!"
+          }),
+          $("<div>", {
+            class: "card-body"
+          }).append(
+            $("<h5>", {
+              class: "card-title",
+              text: books.title
+            }),
+            $("<p>", {
+              class: "card-text",
+              text: books.caption
+            })
+          )
+        )
+      return $bookDiv;
+    });
+    $clubDetails.html($currentPromotedBooks);
+    // setEventListeners();
+  });
+};
+
+
 
 // TOGGLES BOOKCLUB DETAILS SECTION IN INDEX.HTML
 $(document).ready(function () {
@@ -178,5 +329,6 @@ $(document).ready(function () {
   // <div class="card" id="book-two" data-promoted-books-id="">
 
   refreshCurrentPromotedBooks();
+  promotedClubDetails();
 });
 
