@@ -68,6 +68,7 @@ var API = {
 };
 
 var setEventListeners = function () {
+
   // VIEW COLLAPSE TOGGLER FOR JOINING A BOOKCLUB DETAILS
   $(".promoted-books-at-top").on("click", function (event) {
     // console.log("Join Click");
@@ -81,6 +82,13 @@ var setEventListeners = function () {
     } else {
       $("#detailsSection").collapse("show");
     }
+  });
+
+  $("#home-top-bar").click(function () {
+    loggedInUserId = '0';
+    refreshCurrentPromotedBooks();
+    promotedClubDetails();
+    handleUserNameDisplay();
   });
 
   // TOGGLES LOG-IN FORM IN INDEX.HTML
@@ -154,7 +162,7 @@ var setEventListeners = function () {
       });
       $select1.html($times);
     });
-    
+
     API.getLocations().then(function (resp) {
       console.log("-------------getLocations(): ", resp);
       // Get references to page elements
@@ -179,34 +187,35 @@ var handleUserNameDisplay = function () {
   var $userNameToggle = $("#user-name-toggle");
   var $dataUser = $("#user-name-display").attr("data-user", loggedInUserId);
 
-  API.getCurrentReader().then(function (data) {
-    // console.log("-------------getCurrentReader(): ", data);
-    // Get references to page elements
-    var $userNameDisplay = $("#user-name-display");
-    return $userNameDisplay.text(data.firstName + " " + data.lastName);
-  });
 
-  API.getReadersFaves().then(function (resp) {
-    console.log("-------------getReadersFaves(): ", resp);
-    // Get references to page elements
-    var $booksLiked = $("#booksLiked");
-    var $books = resp.map(function (books) {
-      var $option = $(
-        "<a>", {
-          class: "list-group-item",
-          text: books.bookId
-        })
-      return $option;
-    });
-    $booksLiked.html($books);
-  });
-
-  if ($dataUser === "0") {
+  if (loggedInUserId === "0") {
     $userNameToggle.hide();
     $loginBtn.show();
   } else {
     $userNameToggle.show();
     $loginBtn.hide();
+
+    API.getCurrentReader().then(function (data) {
+      // console.log("-------------getCurrentReader(): ", data);
+      // Get references to page elements
+      var $userNameDisplay = $("#user-name-display");
+      return $userNameDisplay.text(data.firstName + " " + data.lastName);
+    });
+
+    API.getReadersFaves().then(function (resp) {
+      console.log("-------------getReadersFaves(): ", resp);
+      // Get references to page elements
+      var $booksLiked = $("#booksLiked");
+      var $books = resp.map(function (books) {
+        var $option = $(
+          "<a>", {
+            class: "list-group-item",
+            text: books.bookId
+          })
+        return $option;
+      });
+      $booksLiked.html($books);
+    });
   }
 };
 handleUserNameDisplay();
