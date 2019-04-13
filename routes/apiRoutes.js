@@ -125,7 +125,7 @@ module.exports = function(app) {
   //   });
   // });
 
-  //Create a new example
+  //Create a new reader
   app.post("/api/reader", function(req, res) {
     var reader = req.body;
     console.log(reader);

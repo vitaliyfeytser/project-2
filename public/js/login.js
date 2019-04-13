@@ -25,7 +25,10 @@ $(document).ready(function() {
         provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
         requireDisplayName: false
       }
-    ]
+    ],
+    callbacks: {
+      signInFailureUrl: "./newAccount.html"
+    }
   };
 
   // Initialize the FirebaseUI Widget using Firebase.
@@ -39,32 +42,32 @@ $(document).ready(function() {
     // User is signed in.
     console.log("CURRENT USER (signed-in): ", user);
     console.log("user.displayName: ", user.displayName);
-    $("#navbarDropdown").text(user.displayName);
-    $("#sign-in-button").hide();
-    $("#member-dropdown").show();
+    $("loginBtn").hide();
+    $("#memberDropDown").show();
+    $("#memberDropDown").text(user.displayName);
   } else {
     // No user is signed in.
     console.log("CURRENT USER (signed-out): ", user);
-    $("#member-dropdown").hide();
-    $("#sign-in-button").show();
+    $("#memberDropDown").hide();
+    $("#loginBtn").show();
   }
   // SIGN-IN/OUT ACTIONS
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
       console.log("user.displayName: ", user.displayName);
-      $("#navbarDropdown").text(user.displayName);
-      $("#sign-in-button").hide();
-      $("#member-dropdown").show();
+      $("#loginBtn").hide();
+      $("#memberDropDown").show();
+      $("#memberDropDown").text(user.displayName);
     } else {
       // No user is signed in.
       console.log("CURRENT USER (signed-out): ", user);
-      $("#member-dropdown").hide();
-      $("#sign-in-button").show();
+      $("#memberDropDown").hide();
+      $("#loginBtn").show();
     }
   });
 
-  $("#sign-out-dropdown").on("click", function(event) {
+  $("#logoutBtn").on("click", function(event) {
     event.preventDefault();
 
     firebase
@@ -74,9 +77,8 @@ $(document).ready(function() {
         // Sign-out successful.
         console.log("USER SIGNED OUT!..¯_(ツ)_/¯ ");
         console.log("user.displayName: ", user.displayName);
-        $("#navbarDropdown").text("");
-        $("#sign-in-button").show();
-        $("#member-dropdown").hide();
+        $("#loginBtn").show();
+        $("#memberDropDown").hide();
       })
       .catch(function() {
         // An error happened.

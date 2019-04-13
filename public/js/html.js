@@ -32,7 +32,8 @@ $("#btnSubmitProfile").on("click", function(event) {
       console.log(data);
     });
 });
-
+////////////////////////////////////
+// THIS PART WAS MOVED TO INDEX.JS - EVENT LISTENERS MUST BE ADDED DYNAMICALLY ON ELEMENT CREATION
 // $(".favorInput").on("click", function(event) {
 //   console.log("Click");
 //   event.preventDefault();
@@ -46,3 +47,4 @@ $("#btnSubmitProfile").on("click", function(event) {
 //     console.log(data);
 //   });
 // });
+
