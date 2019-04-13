@@ -46,15 +46,15 @@ create table locations
     PRIMARY KEY (id)
 );
 
-INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks', '1401 Alhambra Blvd. Sacramento, CA' ,'Friday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks', '1401 Alhambra Blvd. Sacramento, CA' ,'Saturday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks', '1401 Alhambra Blvd. Sacramento, CA' ,'Sunday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks', '1020 16th St. Sacramento, CA','Friday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks', '1020 16th St. Sacramento, CA','Saturday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks', '1020 16th St. Sacramento, CA','Sunday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks', '5300 Folsom Blvd. Sacramento, CA','Friday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks', '5300 Folsom Blvd. Sacramento, CA','Saturday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks', '5300 Folsom Blvd. Sacramento, CA','Sunday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks-1', '1401 Alhambra Blvd. Sacramento, CA' ,'Friday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks-1', '1401 Alhambra Blvd. Sacramento, CA' ,'Saturday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks-1', '1401 Alhambra Blvd. Sacramento, CA' ,'Sunday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks-2', '1020 16th St. Sacramento, CA','Friday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks-2', '1020 16th St. Sacramento, CA','Saturday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks-2', '1020 16th St. Sacramento, CA','Sunday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks-3', '5300 Folsom Blvd. Sacramento, CA','Friday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks-3', '5300 Folsom Blvd. Sacramento, CA','Saturday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO locations (placeName, placeAddress, meetingTimes, createdAt, updatedAt) VALUES ('Starbucks-3', '5300 Folsom Blvd. Sacramento, CA','Sunday Night', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
 
 create table promotedBooks
 (
@@ -90,10 +90,15 @@ create table favoriteBooks
 );
 
 INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('1', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('10', '7', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('2', '7', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
 INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('10', '4', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
 INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('7', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
 INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('1', '6', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('3', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('2', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('4', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('5', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('6', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
 
 create table bookClubs
 (
@@ -110,17 +115,17 @@ INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUE
 INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('1', '2', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
 INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('1', '1', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
 INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('1', '6', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('10', '7', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('10', '6', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('10', '3', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('7', '8', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '10', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '11', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '15', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '9', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '12', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '4', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '5', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('2', '7', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('2', '6', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('2', '3', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('2', '8', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('2', '10', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '11', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '15', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '9', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '12', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '4', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '5', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
 
 
 SELECT * FROM locations;

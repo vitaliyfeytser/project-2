@@ -60,10 +60,10 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <div class="navbar-nav ml-auto">
-  
+
             <button type="button" id="loginBtn" class="btn btn-light btn-sm" data-toggle="modal"
               data-target="#popUpWindow">LOG IN</button>
-  
+
             <div class="input-group" id="user-name-toggle" style="display: none">
               <div class="input-group justify-content-center">
                 <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" data-user="0"
@@ -74,16 +74,22 @@
                 </div>
               </div>
             </div>
-  
-  
+
             <a class="nav-item nav-link text-center" href="##mainSection">HOME</a>
             <a class="nav-item nav-link text-center" href="#weather">BOOKS</a>
             <a class="nav-item nav-link text-center" href="#apod">MEETUPS</a>
+
+            <button type="button" id="readers" class="btn btn-light btn-sm" data-toggle="modal"
+              data-target="#popUpWindow">Readers</button>
+            <button type="button" id="faves" class="btn btn-light btn-sm" data-toggle="modal"
+              data-target="#popUpWindow">Faves</button>
+            <button type="button" id="clubs" class="btn btn-light btn-sm" data-toggle="modal"
+              data-target="#popUpWindow">Clubs</button>
           </div>
         </div>
       </div>
     </nav>
-  
+
     <!-- firebase sign-in modal -->
     <!-- <div class="modal fade" id="popUpWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
@@ -97,215 +103,279 @@
     </div> -->
     <!-- firebase sign-in modal closing div tags -->
 
-  <!-- ******************** LOG-IN FORM SECTION ******************** -->
-  <div class="container-fluid collapse" id="formSection">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-10" id="card">
+    <!-- ******************** LOG-IN FORM SECTION ******************** -->
+    <div class="container-fluid collapse" id="formSection">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10" id="card">
 
-        <div class="jumbotron jumbotron-form front collapse">
-          <h1 class="display-3">Welcome back!</h1>
-          <p class="lead">Join a local book club to meet people, read something new, engage in heathy debate
-            about a
-            premise of your favorite book, or just to continue to explore the wonderful world of books.</p>
-
-          <br>
-
-          <form class="justify-content-center" id="profileForm">
-
-            <div class="row justify-content-center">
-              <div class="col-12 col-md-6 col-lg-5">
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Email:</div>
-                  </div>
-                  <input type="email" class="form-control" id="emailInput" placeholder="littleHands@us.gov">
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-5">
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Password:</div>
-                  </div>
-                  <input type="text" class="form-control" id="passwordInput" placeholder="NOT 123abc">
-                </div>
-              </div>
-            </div>
+          <div class="jumbotron jumbotron-form front collapse">
+            <h1 class="display-3">Welcome back!</h1>
+            <p class="lead">Join a local book club to meet people, read something new, engage in heathy debate
+              about a
+              premise of your favorite book, or just to continue to explore the wonderful world of books.</p>
 
             <br>
 
-            <div class="row justify-content-center">
-              <div class="col-12 col-md-10">
-                <div class="lead">
-                  <button type="submit" id="btnLogIn" class="btn btn-light mb-2">Log In</button>
-                  ..or if you are new to us:
-                  <button type="button" id="btnSignUp" class="btn btn-light mb-2">Sign Up</button>
+            <form class="justify-content-center" id="profileForm">
+
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-5">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">Email:</div>
+                    </div>
+                    <input type="email" class="form-control" id="emailInput" placeholder="littleHands@us.gov">
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-5">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">Password:</div>
+                    </div>
+                    <input type="text" class="form-control" id="passwordInput" placeholder="NOT 123abc">
+                  </div>
                 </div>
               </div>
-            </div>
-          </form>
-        </div>
 
-        <!-- </div>
+              <br>
+
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-10">
+                  <div class="lead">
+                    <button type="submit" id="btnLogIn" class="btn btn-light mb-2">Log In</button>
+                    ..or if you are new to us:
+                    <button type="button" id="btnSignUp" class="btn btn-light mb-2">Sign Up</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- </div>
     </div>
   </div> -->
 
-        <!-- ******************** SIGN-UP FORM SECTION ******************** -->
+          <!-- ******************** SIGN-UP FORM SECTION ******************** -->
 
-        <!-- <div class="container-fluid collapse" id="formSection">
+          <!-- <div class="container-fluid collapse" id="formSection">
     <div class="row justify-content-center">
       <div class="col-12 col-md-10"> -->
 
-        <div class="jumbotron jumbotron-form back collapse">
-          <h1 class="display-3">Your next book adventure is calling!</h1>
-          <p class="lead">Join a local book club to meet people, read something new, engage in heathy debate
-            about a
-            premise of your favorite book, or just to continue to explore the wonderful world of books.</p>
-
-          <br>
-
-          <form class="justify-content-center" id="profileForm">
-
-            <div class="row justify-content-center">
-              <div class="col-12 col-md-6 col-lg-5">
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">First Name:</div>
-                  </div>
-                  <input type="text" class="form-control" id="firstNameInput" placeholder="Donnie">
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-5">
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Last Name:</div>
-                  </div>
-                  <input type="text" class="form-control" id="LastNameInput" placeholder="Trumpo">
-                </div>
-              </div>
-            </div>
-
-            <div class="row justify-content-center">
-              <div class="col-12 col-md-6 col-lg-5">
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">City:</div>
-                  </div>
-                  <input type="text" class="form-control" id="cityInput" placeholder="Sacramento">
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-5">
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">State:</div>
-                  </div>
-                  <input type="text" class="form-control" id="stateInput" placeholder="Kalifornia">
-                </div>
-              </div>
-            </div>
-
-            <div class="row justify-content-center">
-              <div class="col-12 col-md-6 col-lg-5">
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Gender:</div>
-                  </div>
-                  <select id="genderInput" class="custom-select">
-                    <option selected>Choose...</option>
-                    <option value="1">Female</option>
-                    <option value="2">Male</option>
-                    <option value="3">Caitlyn Jenner</option>
-                    <option value="4">Not Sure</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-5">
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Age:</div>
-                  </div>
-                  <select id="ageInput" class="custom-select">
-                    <option selected>Choose...</option>
-                    <option value="1">Immature Child (1-19)</option>
-                    <option value="2">Young Blood (20-29)</option>
-                    <option value="3">Midlife Crisis (30-39)</option>
-                    <option value="4">3 Kids & A Mortgage (40-49)</option>
-                    <option value="5">Old (50-69)</option>
-                    <option value="6">Super Old (70-89)</option>
-                    <option value="5">Beef Jerky (90+)</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <div class="row justify-content-center">
-              <div class="col-12 col-md-10">
-                <div class="form-group">
-                  <textarea class="form-control" id="BioInput" placeholder="How about a short personal bio?"
-                    rows="5"></textarea>
-                </div>
-              </div>
-            </div>
-
-            <div class="row justify-content-center">
-              <div class="col-12 col-md-6 col-lg-5">
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Email:</div>
-                  </div>
-                  <input type="email" class="form-control" id="emailInput" placeholder="littleHands@us.gov">
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-5">
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">Password:</div>
-                  </div>
-                  <input type="text" class="form-control" id="passwordInput" placeholder="NOT 123abc">
-                </div>
-              </div>
-            </div>
+          <div class="jumbotron jumbotron-form back collapse">
+            <h1 class="display-3">Your next book adventure is calling!</h1>
+            <p class="lead">Join a local book club to meet people, read something new, engage in heathy debate
+              about a
+              premise of your favorite book, or just to continue to explore the wonderful world of books.</p>
 
             <br>
 
-            <div class="row justify-content-center">
-              <div class="col-12 col-md-10">
-                <button type="submit" id="btnSubmitProfile" class="btn btn-light mb-2">Sign Up</button>
-              </div>
-            </div>
-          </form>
-        </div>
+            <form class="justify-content-center" id="profileForm">
 
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-5">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">First Name:</div>
+                    </div>
+                    <input type="text" class="form-control" id="firstNameInput" placeholder="Donnie">
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-5">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">Last Name:</div>
+                    </div>
+                    <input type="text" class="form-control" id="LastNameInput" placeholder="Trumpo">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-5">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">City:</div>
+                    </div>
+                    <input type="text" class="form-control" id="cityInput" placeholder="Sacramento">
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-5">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">State:</div>
+                    </div>
+                    <input type="text" class="form-control" id="stateInput" placeholder="Kalifornia">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-5">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">Gender:</div>
+                    </div>
+                    <select id="genderInput" class="custom-select">
+                      <option selected>Choose...</option>
+                      <option value="1">Female</option>
+                      <option value="2">Male</option>
+                      <option value="3">Caitlyn Jenner</option>
+                      <option value="4">Not Sure</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-5">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">Age:</div>
+                    </div>
+                    <select id="ageInput" class="custom-select">
+                      <option selected>Choose...</option>
+                      <option value="1">Immature Child (1-19)</option>
+                      <option value="2">Young Blood (20-29)</option>
+                      <option value="3">Midlife Crisis (30-39)</option>
+                      <option value="4">3 Kids & A Mortgage (40-49)</option>
+                      <option value="5">Old (50-69)</option>
+                      <option value="6">Super Old (70-89)</option>
+                      <option value="5">Beef Jerky (90+)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-10">
+                  <div class="form-group">
+                    <textarea class="form-control" id="BioInput" placeholder="How about a short personal bio?"
+                      rows="5"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-5">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">Email:</div>
+                    </div>
+                    <input type="email" class="form-control" id="emailInput" placeholder="littleHands@us.gov">
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-5">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">Password:</div>
+                    </div>
+                    <input type="text" class="form-control" id="passwordInput" placeholder="NOT 123abc">
+                  </div>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-10">
+                  <button type="submit" id="btnSubmitProfile" class="btn btn-light mb-2">Sign Up</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- ******************** MAIN SECTION ******************** -->
-  <div class="container-fluid" id="mainSection">
-    <div class="row" id="cardRow">
-      <div class="col">
-        <div class="card-deck">
-          <!-- //////////////////////// -->
-          <div class="card" id="book-one" data-promoted-books-id="">
-            <img class="card-img-top promoted-books-at-top" src="./images/hb.jpeg" alt="Holy Bible">
-            <div class="card-body promoted-books-at-top">
+    <!-- ******************** MAIN SECTION ******************** -->
+    <div class="container-fluid" id="mainSection">
+      <div class="row" id="cardRow">
+        <div class="col">
+          <div class="card-deck">
+            <!-- //////////////////////// -->
+            <div class="card" id="book-one" data-promoted-books-id="">
+              <img class="card-img-top promoted-books-at-top" src="./images/hb.jpeg" alt="Holy Bible">
+              <div class="card-body promoted-books-at-top">
+                <h5 class="card-title">THE ACTION BIBLE</h5>
+                <p class="card-text">Finally! From the authors who brought you the "HOLY BIBLE", "SANTA CLAUSE &
+                  RUDOLPH",
+                  "GHOSTS ARE REAL, NO - I'M SERIOUS!" comes a story of the Bible Heroes and Devotion! Let's meet up and
+                  together
+                  color Moses with your favorite set of crayons!</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Join this book club or fav it for later!</small>
+                <img class="ml-3 promoted-books-at-top joinClub" src="./images/arrow.png" alt="Join This Book Club!" width="20px"
+                  height="20px" data-toggle="tooltip" data-placement="top" title="Join This Book Club!">
+                <img class="favorInput" data-book="1" src="./images/heart.png" alt="Fav It For Later!" width="20px"
+                  height="20px" data-toggle="tooltip" data-placement="top" title="Fav It For Later!">
+              </div>
+            </div>
+            <!-- ///////////////////////////// -->
+            <div class="card" id="book-two" data-promoted-books-id="">
+              <img class="card-img-top promoted-books-at-top" src="./images/ks.jpeg" alt="Kama Sutra">
+              <div class="card-body promoted-books-at-top">
+                <h5 class="card-title">KAMA SUTRA FOR BEGINNERS</h5>
+                <p class="card-text">Will you just look at the cover page? Does it not make you want to read this book
+                  again and again and again? Yes, we feel the same way! Let's meet up and read it together: bring your
+                  kids, your
+                  grandkids, even your neighbor - KAMA SUTRA is for everyone!</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Join this book club or fav it for later!</small>
+                <img class="ml-3 promoted-books-at-top joinClub" src="./images/arrow.png" alt="Join This Book Club!" width="20px"
+                  height="20px" data-toggle="tooltip" data-placement="top" title="Join This Book Club!">
+                <img class="favorInput" data-book="2" src="./images/heart.png" alt="Fav It For Later!" width="20px"
+                  height="20px" data-toggle="tooltip" data-placement="top" title="Fav It For Later!">
+              </div>
+            </div>
+            <div class="card" id="book-three" data-promoted-books-id="">
+              <img class="card-img-top promoted-books-at-top" src="./images/yp.jpeg" alt="Card image cap">
+              <div class="card-body promoted-books-at-top">
+                <h5 class="card-title">YELLOW PAGES</h5>
+                <p class="card-text">This book is not for the light of heart... The New Yorker calls it "Riveting!!!",
+                  The
+                  Guardian says "If there's one book you read your entire life... this is the one!". Let's meet up and
+                  flip from page to page together in search for the meaning of life and winning lottery numbers.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Join this book club or fav it for later!</small>
+                <img class="ml-3 promoted-books-at-top joinClub" src="./images/arrow.png" alt="Join This Book Club!" width="20px"
+                  height="20px" data-toggle="tooltip" data-placement="top" title="Join This Book Club!">
+                <img class="favorInput" data-book="3" src="./images/heart.png" alt="Fav It For Later!" width="20px"
+                  height="20px" data-toggle="tooltip" data-placement="top" title="Fav It For Later!">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ******************** BOOK CLUB DETAILS SECTION ******************** -->
+    <div class="container-fluid collapse" id="detailsSection">
+      <div class="row">
+        <div class="col col-md-2 col-lg-3"></div>
+        <div class="col-12 col-md-4 col-lg-3" id="clubDetails">
+
+          <div class="card clubDetailsCard" id="book-1-clubs" data-promoted-books-id="">
+            <img class="card-img-top" src="./images/hb.jpeg" alt="Holy Bible">
+            <div class="card-body">
               <h5 class="card-title">THE ACTION BIBLE</h5>
-              <p class="card-text">Finally! From the authors who brought you the "HOLY BIBLE", "SANTA CLAUSE & RUDOLPH",
+              <p class="card-text">Finally! From the authors who brought you the "HOLY BIBLE", "SANTA CLAUSE &
+                RUDOLPH",
                 "GHOSTS ARE REAL, NO - I'M SERIOUS!" comes a story of the Bible Heroes and Devotion! Let's meet up and
                 together
                 color Moses with your favorite set of crayons!</p>
             </div>
             <div class="card-footer">
               <small class="text-muted">Join this book club or fav it for later!</small>
-              <img class="ml-3 promoted-books-at-top" src="./images/arrow.png" alt="Join This Book Club!" width="20px"
+              <img class="ml-3" src="./images/arrow.png" alt="Join This Book Club!" width="20px"
                 height="20px" data-toggle="tooltip" data-placement="top" title="Join This Book Club!">
               <img class="favorInput" data-book="1" src="./images/heart.png" alt="Fav It For Later!" width="20px"
                 height="20px" data-toggle="tooltip" data-placement="top" title="Fav It For Later!">
             </div>
           </div>
-          <!-- ///////////////////////////// -->
-          <div class="card" id="book-two" data-promoted-books-id="">
-            <img class="card-img-top promoted-books-at-top" src="./images/ks.jpeg" alt="Kama Sutra">
-            <div class="card-body promoted-books-at-top">
+          <div class="card clubDetailsCard" id="book-2-clubs" data-promoted-books-id="">
+            <img class="card-img-top" src="./images/ks.jpeg" alt="Kama Sutra">
+            <div class="card-body">
               <h5 class="card-title">KAMA SUTRA FOR BEGINNERS</h5>
               <p class="card-text">Will you just look at the cover page? Does it not make you want to read this book
                 again and again and again? Yes, we feel the same way! Let's meet up and read it together: bring your
@@ -314,349 +384,379 @@
             </div>
             <div class="card-footer">
               <small class="text-muted">Join this book club or fav it for later!</small>
-              <img class="ml-3 promoted-books-at-top" src="./images/arrow.png" alt="Join This Book Club!" width="20px"
+              <img class="ml-3" src="./images/arrow.png" alt="Join This Book Club!" width="20px"
                 height="20px" data-toggle="tooltip" data-placement="top" title="Join This Book Club!">
               <img class="favorInput" data-book="2" src="./images/heart.png" alt="Fav It For Later!" width="20px"
                 height="20px" data-toggle="tooltip" data-placement="top" title="Fav It For Later!">
             </div>
           </div>
-          <div class="card" id="book-three" data-promoted-books-id="">
-            <img class="card-img-top promoted-books-at-top" src="./images/yp.jpeg" alt="Card image cap">
-            <div class="card-body promoted-books-at-top">
+          <div class="card clubDetailsCard" id="book-3-clubs" data-promoted-books-id="">
+            <img class="card-img-top" src="./images/yp.jpeg" alt="Card image cap">
+            <div class="card-body">
               <h5 class="card-title">YELLOW PAGES</h5>
-              <p class="card-text">This book is not for the light of heart... The New Yorker calls it "Riveting!!!", The
+              <p class="card-text">This book is not for the light of heart... The New Yorker calls it "Riveting!!!",
+                The
                 Guardian says "If there's one book you read your entire life... this is the one!". Let's meet up and
                 flip from page to page together in search for the meaning of life and winning lottery numbers.</p>
             </div>
             <div class="card-footer">
               <small class="text-muted">Join this book club or fav it for later!</small>
-              <img class="ml-3 promoted-books-at-top" src="./images/arrow.png" alt="Join This Book Club!" width="20px"
+              <img class="ml-3" src="./images/arrow.png" alt="Join This Book Club!" width="20px"
                 height="20px" data-toggle="tooltip" data-placement="top" title="Join This Book Club!">
               <img class="favorInput" data-book="3" src="./images/heart.png" alt="Fav It For Later!" width="20px"
                 height="20px" data-toggle="tooltip" data-placement="top" title="Fav It For Later!">
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ******************** BOOK CLUB DETAILS SECTION ******************** -->
-  <div class="container-fluid collapse" id="detailsSection">
-    <div class="row">
-      <div class="col col-md-2 col-lg-3"></div>
-      <div class="col-12 col-md-4 col-lg-3">
-        <div class="card">
-          <img class="card-img-top" src="./images/hb.jpeg" alt="Holy Bible">
-          <div class="card-body">
-            <h5 class="card-title">THE ACTION BIBLE</h5>
-            <p class="card-text">Finally! From the authors who brought you the "HOLY BIBLE", "SANTA CLAUSE & RUDOLPH",
-              "GHOSTS ARE REAL, NO - I'M SERIOUS!" comes a story of the Bible Heroes and Devotion! Let's meet up and
-              together
-              color Moses with your favorite set of crayons!</p>
+          <!-- <div class="card">
+            <img class="card-img-top" src="./images/hb.jpeg" alt="Holy Bible">
+            <div class="card-body">
+              <h5 class="card-title">THE ACTION BIBLE</h5>
+              <p class="card-text">Finally! From the authors who brought you the "HOLY BIBLE", "SANTA CLAUSE & RUDOLPH",
+                "GHOSTS ARE REAL, NO - I'M SERIOUS!" comes a story of the Bible Heroes and Devotion! Let's meet up and
+                together
+                color Moses with your favorite set of crayons!</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Join this book club or fav it for later!</small>
+              <img class="ml-3" src="./images/arrow.png" alt="Join This Book Club!" width="20px" height="20px"
+                data-toggle="tooltip" data-placement="top" title="Join This Book Club!">
+              <img src="./images/heart.png" alt="Fav It For Later!" width="20px" height="20px" data-toggle="tooltip"
+                data-placement="top" title="Fav It For Later!">
+            </div>
           </div>
-          <!-- <div class="card-footer">
-            <small class="text-muted">Join this book club or fav it for later!</small>
-            <img class="ml-3" src="./images/arrow.png" alt="Join This Book Club!" width="20px" height="20px"
-              data-toggle="tooltip" data-placement="top" title="Join This Book Club!">
-            <img src="./images/heart.png" alt="Fav It For Later!" width="20px" height="20px" data-toggle="tooltip"
-              data-placement="top" title="Fav It For Later!">
+
+          <div class="card">
+            <img class="card-img-top" src="./images/hb.jpeg" alt="Holy Bible">
+            <div class="card-body">
+              <h5 class="card-title">THE ACTION BIBLE</h5>
+              <p class="card-text">Finally! From the authors who brought you the "HOLY BIBLE", "SANTA CLAUSE & RUDOLPH",
+                "GHOSTS ARE REAL, NO - I'M SERIOUS!" comes a story of the Bible Heroes and Devotion! Let's meet up and
+                together
+                color Moses with your favorite set of crayons!</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Join this book club or fav it for later!</small>
+              <img class="ml-3" src="./images/arrow.png" alt="Join This Book Club!" width="20px" height="20px"
+                data-toggle="tooltip" data-placement="top" title="Join This Book Club!">
+              <img src="./images/heart.png" alt="Fav It For Later!" width="20px" height="20px" data-toggle="tooltip"
+                data-placement="top" title="Fav It For Later!">
+            </div>
+          </div>
+
+          <div class="card">
+            <img class="card-img-top" src="./images/hb.jpeg" alt="Holy Bible">
+            <div class="card-body">
+              <h5 class="card-title">THE ACTION BIBLE</h5>
+              <p class="card-text">Finally! From the authors who brought you the "HOLY BIBLE", "SANTA CLAUSE & RUDOLPH",
+                "GHOSTS ARE REAL, NO - I'M SERIOUS!" comes a story of the Bible Heroes and Devotion! Let's meet up and
+                together
+                color Moses with your favorite set of crayons!</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Join this book club or fav it for later!</small>
+              <img class="ml-3" src="./images/arrow.png" alt="Join This Book Club!" width="20px" height="20px"
+                data-toggle="tooltip" data-placement="top" title="Join This Book Club!">
+              <img src="./images/heart.png" alt="Fav It For Later!" width="20px" height="20px" data-toggle="tooltip"
+                data-placement="top" title="Fav It For Later!">
+            </div>
           </div> -->
-        </div>
-      </div>
 
-      <div class="col-12 col-md-4 col-lg-3">
-
-        <div class="jumbotron jumbotron-details">
-          <h1 class="display-3">Join us!</h1>
-          <p class="lead">Choose club details:</p>
-          <div class="accordion" id="accordion">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="false" aria-controls="collapseOne">
-                    TIME:
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                  <form>
-                    <div class="form-group">
-                      <select class="form-control" id="FormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="false" aria-controls="collapseTwo">
-                    LOCATION:
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="card-body">
-                  <form>
-                    <div class="form-group">
-                      <select class="form-control" id="FormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingThree">
-                <h2 class="mb-0">
-                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    CURRENT MEMBERS:
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="card-body">
-                  <ul class="list-inline">
-                    <li class="list-inline-item members-content">Bobbie Joe</li>
-                    <li class="list-inline-item members-content">Mary Sue</li>
-                    <li class="list-inline-item members-content">John Smith</li>
-                    <li class="list-inline-item members-content">Carry Smith</li>
-                    <li class="list-inline-item members-content">Michael Bolton</li>
-                    <li class="list-inline-item members-content">Yo Momma</li>
-                    <li class="list-inline-item members-content">Jesus Himself</li>
-                    <li class="list-inline-item members-content">LeBron James</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
-      </div>
-      <div class="col col-md-2 col-lg-3"></div>
-    </div>
-  </div>
+        <div class="col-12 col-md-4 col-lg-3">
 
-
-  <!-- ******************** ACCOUNT SECTION ******************** -->
-  <div class="container-fluid" id="accountSection">
-    <div class="row">
-      <div class="col-12 col-lg-8">
-
-        <div class="jumbotron jumbotron-profile">
-          <h1 class="display-3">My Current Book Clubs</h1>
-          <p class="lead">Book clubs I'm interested in joining later down the road:</p>
-        </div>
-
-        <div class="card mb-3">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="./images/hb.jpeg" class="card-img" alt="Action Bible">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title mb-0">THE ACTION BIBLE
-                  <img class="ml-3" src="./images/check.png" alt="You're A Member Of This Book Club" width="20px"
-                    height="20px" data-toggle="tooltip" data-placement="top" title="You're A Member Of This Book Club!">
-                  <img class="ml-1" src="./images/flame.png" alt="LEAVE This Book Club!" width="20px" height="20px"
-                    data-toggle="tooltip" data-placement="top" title="LEAVE This Book Club!">
-                  <img class="ml-1" src="./images/heart.png" alt="Fav It For Later!" width="20px" height="20px"
-                    data-toggle="tooltip" data-placement="top" title="Fav It For Later!">
-                </h5>
-              </div>
-
-              <div class="row">
-                <div class="col-4">
-                  <h5 class="day">DAY:</h5>
+          <div class="jumbotron jumbotron-details">
+            <h1 class="display-3">Join us!</h1>
+            <p class="lead">Choose club details:</p>
+            <div class="accordion" id="accordion">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                      aria-expanded="false" aria-controls="collapseOne">
+                      TIME:
+                    </button>
+                  </h2>
                 </div>
-                <div class="col-8">
-                  <h6 class="day-content">Fridays @ 7pm</h6>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                    <form>
+                      <div class="form-group">
+                        <select class="form-control" id="FormControlSelect1">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-4">
-                  <h5 class="location">LOCATION:</h6>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                      data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      LOCATION:
+                    </button>
+                  </h2>
                 </div>
-                <div class="col-8">
-                  <h6 class="location-content">Starbucks on 5th</h6>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+                    <form>
+                      <div class="form-group">
+                        <select class="form-control" id="FormControlSelect2">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <!-- <option>4</option>
+                          <option>5</option> -->
+                        </select>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-4">
-                  <h5 class="members">IN THE CLUB:</h5>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                      data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      CURRENT MEMBERS:
+                    </button>
+                  </h2>
                 </div>
-                <div class="col-8">
-                  <ul class="list-inline">
-                    <li class="list-inline-item members-content">Bobbie Joe</li>
-                    <li class="list-inline-item members-content">Mary Sue</li>
-                    <li class="list-inline-item members-content">John Smith</li>
-                    <li class="list-inline-item members-content">Carry Smith</li>
-                    <li class="list-inline-item members-content">Michael Bolton</li>
-                    <li class="list-inline-item members-content">Yo Momma</li>
-                    <li class="list-inline-item members-content">Jesus Himself</li>
-                    <li class="list-inline-item members-content">LeBron James</li>
-                  </ul>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+                    <ul class="list-inline">
+                      <li class="list-inline-item members-content">Bobbie Joe</li>
+                      <li class="list-inline-item members-content">Mary Sue</li>
+                      <li class="list-inline-item members-content">John Smith</li>
+                      <li class="list-inline-item members-content">Carry Smith</li>
+                      <li class="list-inline-item members-content">Michael Bolton</li>
+                      <li class="list-inline-item members-content">Yo Momma</li>
+                      <li class="list-inline-item members-content">Jesus Himself</li>
+                      <li class="list-inline-item members-content">LeBron James</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="card mb-3">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="./images/yp.jpeg" class="card-img" alt="Yellow Pages">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title mb-0">YELLOW PAGES
-                  <img class="ml-3" src="./images/check.png" alt="You're A Member Of This Book Club" width="20px"
-                    height="20px" data-toggle="tooltip" data-placement="top" title="You're A Member Of This Book Club!">
-                  <img class="ml-1" src="./images/flame.png" alt="LEAVE This Book Club!" width="20px" height="20px"
-                    data-toggle="tooltip" data-placement="top" title="LEAVE This Book Club!">
-                  <img class="ml-1" src="./images/heart.png" alt="Fav It For Later!" width="20px" height="20px"
-                    data-toggle="tooltip" data-placement="top" title="Fav It For Later!">
-                </h5>
-              </div>
 
-              <div class="row">
-                <div class="col-4">
-                  <h5 class="day">DAY:</h5>
-                </div>
-                <div class="col-8">
-                  <h6 class="day-content">Sundays after church</h6>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-4">
-                  <h5 class="location">LOCATION:</h6>
-                </div>
-                <div class="col-8">
-                  <h6 class="location-content">Dark Alley behind the church</h6>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-4">
-                  <h5 class="members">IN THE CLUB:</h5>
-                </div>
-                <div class="col-8">
-                  <ul class="list-inline">
-                    <li class="list-inline-item members-content">Bobbie Joe</li>
-                    <li class="list-inline-item members-content">Mary Sue</li>
-                    <li class="list-inline-item members-content">John Smith</li>
-                    <li class="list-inline-item members-content">Carry Smith</li>
-                    <li class="list-inline-item members-content">Michael Bolton</li>
-                    <li class="list-inline-item members-content">Yo Momma</li>
-                    <li class="list-inline-item members-content">Jesus Himself</li>
-                    <li class="list-inline-item members-content">LeBron James</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="col-12 col-lg-4">
-        <div class="jumbotron jumbotron-profile">
-          <h1 class="display-3">My Favs</h1>
-          <p class="lead">Books I'm considering:</p>
-        </div>
-
-        <div class="list-group">
-          <a href="#" class="list-group-item list-group-item-action">Awesome book 1
-            <img class="ml-3" src="./images/flame.png" style="float: right" alt="Leave this Club!" width="20px"
-              height="20px" data-toggle="tooltip" data-placement="top" title="REMOVE From Favorites">
-          </a>
-          <a href="#" class="list-group-item list-group-item-action">Awesome book 2
-            <img class="ml-3" src="./images/flame.png" style="float: right" alt="Leave this Club!" width="20px"
-              height="20px" data-toggle="tooltip" data-placement="top" title="REMOVE From Favorites">
-          </a>
-          <a href="#" class="list-group-item list-group-item-action">Awesome book 3
-            <img class="ml-3" src="./images/flame.png" style="float: right" alt="Leave this Club!" width="20px"
-              height="20px" data-toggle="tooltip" data-placement="top" title="REMOVE From Favorites">
-          </a>
-          <a href="#" class="list-group-item list-group-item-action disabled">Awesome book 4
-            <img class="ml-3" src="./images/flame.png" style="float: right" alt="Leave this Club!" width="20px"
-              height="20px" data-toggle="tooltip" data-placement="top" title="REMOVE From Favorites">
-          </a>
-        </div>
+        <div class="col col-md-2 col-lg-3"></div>
       </div>
     </div>
-  </div>
-
-  <!-- ******************** TOP BUTTON: ******************** -->
-  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
-  <!-- ******************** LIBRARIES and SCRIPTS LINKS ******************** -->
-  <!-- Krista'ls Javascript - reads new user values in the sign-up form and submits to database -->
-  <script src="./js/html.js"></script>
-  <!-- Vitaliy's JS - Dynamic creation and manipulation of HTML elements -->
-  <script src="./js/book.js"></script>
-  <script src="./index.js"></script>
-  <!-- Patrick's Login work - Firebase login user authentication -->
-  <script src="./js/login.js"></script>
-  <!-- IMPORTANT ORDER FOR BOOTSTRAP NAVIGATION ON MOBILE DEVICES: jQuery JS first, then Popper JS, then Bootstrap JS -->
 
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+    <!-- ******************** ACCOUNT SECTION ******************** -->
+    <div class="container-fluid" id="accountSection">
+      <div class="row">
+        <div class="col-12 col-lg-8">
+
+          <div class="jumbotron jumbotron-profile">
+            <h1 class="display-3">My Current Book Clubs</h1>
+            <p class="lead">Book clubs I'm interested in joining later down the road:</p>
+          </div>
+
+          <div class="card mb-3">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="./images/hb.jpeg" class="card-img" alt="Action Bible">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title mb-0">THE ACTION BIBLE
+                    <img class="ml-3" src="./images/check.png" alt="You're A Member Of This Book Club" width="20px"
+                      height="20px" data-toggle="tooltip" data-placement="top"
+                      title="You're A Member Of This Book Club!">
+                    <img class="ml-1" src="./images/flame.png" alt="LEAVE This Book Club!" width="20px" height="20px"
+                      data-toggle="tooltip" data-placement="top" title="LEAVE This Book Club!">
+                    <img class="ml-1" src="./images/heart.png" alt="Fav It For Later!" width="20px" height="20px"
+                      data-toggle="tooltip" data-placement="top" title="Fav It For Later!">
+                  </h5>
+                </div>
+
+                <div class="row">
+                  <div class="col-4">
+                    <h5 class="day">DAY:</h5>
+                  </div>
+                  <div class="col-8">
+                    <h6 class="day-content">Fridays @ 7pm</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <h5 class="location">LOCATION:</h6>
+                  </div>
+                  <div class="col-8">
+                    <h6 class="location-content">Starbucks on 5th</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <h5 class="members">IN THE CLUB:</h5>
+                  </div>
+                  <div class="col-8">
+                    <ul class="list-inline">
+                      <li class="list-inline-item members-content">Bobbie Joe</li>
+                      <li class="list-inline-item members-content">Mary Sue</li>
+                      <li class="list-inline-item members-content">John Smith</li>
+                      <li class="list-inline-item members-content">Carry Smith</li>
+                      <li class="list-inline-item members-content">Michael Bolton</li>
+                      <li class="list-inline-item members-content">Yo Momma</li>
+                      <li class="list-inline-item members-content">Jesus Himself</li>
+                      <li class="list-inline-item members-content">LeBron James</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="./images/yp.jpeg" class="card-img" alt="Yellow Pages">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title mb-0">YELLOW PAGES
+                    <img class="ml-3" src="./images/check.png" alt="You're A Member Of This Book Club" width="20px"
+                      height="20px" data-toggle="tooltip" data-placement="top"
+                      title="You're A Member Of This Book Club!">
+                    <img class="ml-1" src="./images/flame.png" alt="LEAVE This Book Club!" width="20px" height="20px"
+                      data-toggle="tooltip" data-placement="top" title="LEAVE This Book Club!">
+                    <img class="ml-1" src="./images/heart.png" alt="Fav It For Later!" width="20px" height="20px"
+                      data-toggle="tooltip" data-placement="top" title="Fav It For Later!">
+                  </h5>
+                </div>
+
+                <div class="row">
+                  <div class="col-4">
+                    <h5 class="day">DAY:</h5>
+                  </div>
+                  <div class="col-8">
+                    <h6 class="day-content">Sundays after church</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <h5 class="location">LOCATION:</h6>
+                  </div>
+                  <div class="col-8">
+                    <h6 class="location-content">Dark Alley behind the church</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <h5 class="members">IN THE CLUB:</h5>
+                  </div>
+                  <div class="col-8">
+                    <ul class="list-inline">
+                      <li class="list-inline-item members-content">Bobbie Joe</li>
+                      <li class="list-inline-item members-content">Mary Sue</li>
+                      <li class="list-inline-item members-content">John Smith</li>
+                      <li class="list-inline-item members-content">Carry Smith</li>
+                      <li class="list-inline-item members-content">Michael Bolton</li>
+                      <li class="list-inline-item members-content">Yo Momma</li>
+                      <li class="list-inline-item members-content">Jesus Himself</li>
+                      <li class="list-inline-item members-content">LeBron James</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="jumbotron jumbotron-profile">
+            <h1 class="display-3">My Favs</h1>
+            <p class="lead">Books I'm considering:</p>
+          </div>
+
+          <div class="list-group" id="booksLiked">
+            <a href="#" class="list-group-item list-group-item-action">Awesome book 1
+              <img class="ml-3" src="./images/flame.png" style="float: right" alt="Leave this Club!" width="20px"
+                height="20px" data-toggle="tooltip" data-placement="top" title="REMOVE From Favorites">
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">Awesome book 2
+              <img class="ml-3" src="./images/flame.png" style="float: right" alt="Leave this Club!" width="20px"
+                height="20px" data-toggle="tooltip" data-placement="top" title="REMOVE From Favorites">
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">Awesome book 3
+              <img class="ml-3" src="./images/flame.png" style="float: right" alt="Leave this Club!" width="20px"
+                height="20px" data-toggle="tooltip" data-placement="top" title="REMOVE From Favorites">
+            </a>
+            <a href="#" class="list-group-item list-group-item-action disabled">Awesome book 4
+              <img class="ml-3" src="./images/flame.png" style="float: right" alt="Leave this Club!" width="20px"
+                height="20px" data-toggle="tooltip" data-placement="top" title="REMOVE From Favorites">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ******************** TOP BUTTON: ******************** -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <!-- ******************** LIBRARIES and SCRIPTS LINKS ******************** -->
+    <!-- Krista'ls Javascript - reads new user values in the sign-up form and submits to database -->
+    <script src="./js/html.js"></script>
+    <!-- Vitaliy's JS - Dynamic creation and manipulation of HTML elements -->
+    <script src="./js/book.js"></script>
+    <script src="./index.js"></script>
+    <!-- Patrick's Login work - Firebase login user authentication -->
+    <script src="./js/login.js"></script>
+    <!-- IMPORTANT ORDER FOR BOOTSTRAP NAVIGATION ON MOBILE DEVICES: jQuery JS first, then Popper JS, then Bootstrap JS -->
 
 
-  <!--  THIS SCRIPT WILL INITIALIZE ALL TOOLTIPS ON THIS PAGE:  -->
-  <script>
-    $(document).ready(function () {
-      $('[data-toggle="tooltip"]').tooltip();
-    });
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+      </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+      </script>
 
 
-    // When the user scrolls down 800 from the top of the document, show the button
-    window.onscroll = function () {
-      scrollFunction()
-    };
+    <!--  THIS SCRIPT WILL INITIALIZE ALL TOOLTIPS ON THIS PAGE:  -->
+    <script>
+      $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-        document.getElementById("myBtn").style.display = "block";
-      } else {
-        document.getElementById("myBtn").style.display = "none";
+
+      // When the user scrolls down 800 from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction()
+      };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+          document.getElementById("myBtn").style.display = "block";
+        } else {
+          document.getElementById("myBtn").style.display = "none";
+        }
       }
-    }
 
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    }
-  </script>
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+    </script>
 
-  <!-- Link to Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css">
-  <!-- Add additional services that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+    <!-- Link to Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css">
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
 
-</body>
+  </body>
 
 </html>
