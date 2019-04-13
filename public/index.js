@@ -8,6 +8,40 @@
 // // var $submitBtn = $("#submit");
 // var $cardDeck = $(".card-deck");
 
+var loggedInUserId = '3';
+
+// The API object contains methods for each kind of request we'll make
+var API = {
+  // saveExample: function (example) {
+  //   return $.ajax({
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     type: "POST",
+  //     url: "api/examples",
+  //     data: JSON.stringify(example)
+  //   });
+  // },
+  getCurrentReader: function () {
+    return $.ajax({
+      url: "/api/readers/" + loggedInUserId,
+      type: "GET"
+    });
+  },
+  getPromotedBooks: function () {
+    return $.ajax({
+      url: "/api/promotedbooks/current",
+      type: "GET"
+    });
+  },
+  // deleteExample: function (id) {
+  //   return $.ajax({
+  //     url: "api/examples/" + id,
+  //     type: "DELETE"
+  //   });
+  // }
+};
+
 var setEventListeners = function () {
   $(".promoted-books-at-top").click(function () {
     $("#detailsSection").collapse("toggle");
@@ -43,7 +77,14 @@ var setEventListeners = function () {
 var handleUserNameDisplay = function () {
   var $loginBtn = $("#loginBtn");
   var $userNameToggle = $("#user-name-toggle");
-  var $dataUser = $("#user-name-display").attr("data-user");
+  var $dataUser = $("#user-name-display").attr("data-user", loggedInUserId);
+
+  API.getCurrentReader().then(function (data) {
+    console.log("-------------getCurrentReader(): ", data);
+    // Get references to page elements
+    var $userNameDisplay = $("#user-name-display");
+    return $userNameDisplay.text(data.firstName + " " + data.lastName);
+  });
 
   if ($dataUser === "0") {
     $userNameToggle.hide();
@@ -55,34 +96,10 @@ var handleUserNameDisplay = function () {
 };
 handleUserNameDisplay();
 
-// The API object contains methods for each kind of request we'll make
-var API = {
-  // saveExample: function (example) {
-  //   return $.ajax({
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //     type: "POST",
-  //     url: "api/examples",
-  //     data: JSON.stringify(example)
-  //   });
-  // },
-  getPromotedBooks: function () {
-    return $.ajax({
-      url: "/api/promotedbooks/current",
-      type: "GET"
-    });
-  },
-  // deleteExample: function (id) {
-  //   return $.ajax({
-  //     url: "api/examples/" + id,
-  //     type: "DELETE"
-  //   });
-  // }
-};
 
 var refreshCurrentPromotedBooks = function () {
   API.getPromotedBooks().then(function (data) {
+    console.log("-------------getPromotedBooks(): ", data);
     // Get references to page elements
     var $cardDeck = $(".card-deck");
     var $currentPromotedBooks = data.map(function (books) {
