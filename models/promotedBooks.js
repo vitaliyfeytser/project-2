@@ -6,5 +6,13 @@ module.exports = function(sequelize, DataTypes) {
     coverImage: DataTypes.STRING,
     monthAndYearPromoted: DataTypes.STRING
   });
+
+  promotedBooks.associate = function(models) {
+    // Associating promotedBooks with bookClubs
+    // When a Reader is deleted, also delete any associated bookClubs
+    promotedBooks.hasMany(models.bookClubs, {
+      onDelete: "cascade"
+    });
+  };
   return promotedBooks;
 };

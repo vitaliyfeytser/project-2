@@ -83,7 +83,7 @@ var setEventListeners = function () {
       $("#detailsSection").collapse("show");
     }
   });
-
+  // SETS LOGGED-IN USER ID TO '0' AND DISPLAYS GENERIC INDEX.HTML INFO
   $("#home-top-bar").click(function () {
     loggedInUserId = '0';
     refreshCurrentPromotedBooks();
@@ -134,6 +134,7 @@ var setEventListeners = function () {
     // SETS A VALUE FOR THE COLLAPSE FUNCTION OF THE VIEW CONTROLLER
     currentlyViewdBook = promotedBook.bookId;
 
+
     API.getBookClubsByBook(promotedBook.bookId).then(function (data) {
       console.log("-------------getBookClubsByBook(): ", data);
       return data;
@@ -149,6 +150,7 @@ var setEventListeners = function () {
       // $select1.html($times);
     });
 
+    // GET TIMES FOR THE CHOSEN BOOKCLUB
     API.getLocations().then(function (data) {
       console.log("-------------getLocations(): ", data);
       // Get references to page elements
@@ -162,7 +164,8 @@ var setEventListeners = function () {
       });
       $select1.html($times);
     });
-
+    
+    // GET LOCATIONS FOR THE CHOSEN BOOKCLUB
     API.getLocations().then(function (resp) {
       console.log("-------------getLocations(): ", resp);
       // Get references to page elements
@@ -269,7 +272,7 @@ var refreshCurrentPromotedBooks = function () {
               title: "Join This Book Club!"
             }),
             $("<img>", {
-              class: "favorInput",
+              class: "ml-3 favorInput",
               "data-book": books.id,
               src: "./images/heart.png",
               alt: "Fav It For Later!",
@@ -290,6 +293,43 @@ var refreshCurrentPromotedBooks = function () {
 };
 
 var promotedClubDetails = function () {
+  API.getPromotedBooks().then(function (data) {
+    console.log("-------------getPromotedBooks(): ", data);
+    // Get references to page elements
+    var $clubDetails = $("#clubDetails");
+    var $currentPromotedBooks = data.map(function (books) {
+      var $bookDiv = $(
+        "<div>", {
+          class: "card clubDetailsCard",
+          id: "book-" + books.id + "-clubs",
+          "data-promoted-books-id": books.id
+        }).append(
+          $("<img>", {
+            class: "card-img-top",
+            src: books.coverImage,
+            alt: "Book image was not found!"
+          }),
+          $("<div>", {
+            class: "card-body"
+          }).append(
+            $("<h5>", {
+              class: "card-title",
+              text: books.title
+            }),
+            $("<p>", {
+              class: "card-text",
+              text: books.caption
+            })
+          )
+        )
+      return $bookDiv;
+    });
+    $clubDetails.html($currentPromotedBooks);
+    // setEventListeners();
+  });
+};
+
+var myCurrentClubDetails = function () {
   API.getPromotedBooks().then(function (data) {
     console.log("-------------getPromotedBooks(): ", data);
     // Get references to page elements

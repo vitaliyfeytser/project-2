@@ -9,27 +9,17 @@ module.exports = function(sequelize, DataTypes) {
     bio: DataTypes.TEXT,
     email: DataTypes.TEXT,
   });
+
+  Readers.associate = function(models) {
+    // Associating Readers with favoriteBooks
+    // When a Reader is deleted, also delete any associated favoriteBooks and bookClubs
+    Readers.hasMany(models.favoriteBooks, {
+      onDelete: "cascade"
+    });
+    Readers.hasMany(models.bookClubs, {
+      onDelete: "cascade"
+    });
+  };
+  
   return Readers;
 };
-
-// module.exports = function(sequelize, DataTypes) {
-//   var Todo = sequelize.define("Todo", {
-//     text: {
-//       type: DataTypes.STRING,
-//       // AllowNull is a flag that restricts a todo from being entered if it doesn't
-//       // have a text value
-//       allowNull: false,
-//       // len is a validation that checks that our todo is between 1 and 140 characters
-//       validate: {
-//         len: [1, 140]
-//       }
-//     },
-//     complete: {
-//       type: DataTypes.BOOLEAN,
-//       // defaultValue is a flag that defaults a new todos complete value to false if
-//       // it isn't supplied one
-//       defaultValue: false
-//     }
-//   });
-//   return Todo;
-// };

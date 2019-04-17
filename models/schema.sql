@@ -82,28 +82,28 @@ INSERT INTO promotedBooks (title, author, caption, coverImage, monthAndYearPromo
 create table favoriteBooks
 (
 	id int NOT NULL AUTO_INCREMENT,
-	bookId int NOT NULL,
+	promotedBookId int NOT NULL,
     readerId int NOT NULL,
     createdAt datetime, 
     updatedAt datetime,
     PRIMARY KEY (id)
 );
 
-INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('1', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('2', '7', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('10', '4', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('7', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('1', '6', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('3', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('2', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('4', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('5', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO favoriteBooks (bookId, readerId, createdAt, updatedAt) VALUES ('6', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO favoriteBooks (promotedBookId, readerId, createdAt, updatedAt) VALUES ('1', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO favoriteBooks (promotedBookId, readerId, createdAt, updatedAt) VALUES ('2', '7', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO favoriteBooks (promotedBookId, readerId, createdAt, updatedAt) VALUES ('10', '4', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO favoriteBooks (promotedBookId, readerId, createdAt, updatedAt) VALUES ('7', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO favoriteBooks (promotedBookId, readerId, createdAt, updatedAt) VALUES ('1', '6', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO favoriteBooks (promotedBookId, readerId, createdAt, updatedAt) VALUES ('3', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO favoriteBooks (promotedBookId, readerId, createdAt, updatedAt) VALUES ('2', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO favoriteBooks (promotedBookId, readerId, createdAt, updatedAt) VALUES ('4', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO favoriteBooks (promotedBookId, readerId, createdAt, updatedAt) VALUES ('5', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO favoriteBooks (promotedBookId, readerId, createdAt, updatedAt) VALUES ('6', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
 
 create table bookClubs
 (
 	id int NOT NULL AUTO_INCREMENT,
-	bookId int NOT NULL,
+	promotedBookId int NOT NULL,
     readerId int NOT NULL,
     locationId int NOT NULL,
     createdAt datetime, 
@@ -111,21 +111,21 @@ create table bookClubs
     PRIMARY KEY (id)
 );
 
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('1', '3', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('1', '2', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('1', '1', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('1', '6', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('2', '7', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('2', '6', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('2', '3', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('2', '8', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('2', '10', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '11', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '15', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '9', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '12', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '4', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
-INSERT INTO bookClubs (bookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '5', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (promotedBookId, readerId, locationId, createdAt, updatedAt) VALUES ('1', '3', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (promotedBookId, readerId, locationId, createdAt, updatedAt) VALUES ('1', '2', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (promotedBookId, readerId, locationId, createdAt, updatedAt) VALUES ('1', '1', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (promotedBookId, readerId, locationId, createdAt, updatedAt) VALUES ('1', '6', '3', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (promotedBookId, readerId, locationId, createdAt, updatedAt) VALUES ('2', '7', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (promotedBookId, readerId, locationId, createdAt, updatedAt) VALUES ('2', '6', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (promotedBookId, readerId, locationId, createdAt, updatedAt) VALUES ('2', '3', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (promotedBookId, readerId, locationId, createdAt, updatedAt) VALUES ('2', '8', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (promotedBookId, readerId, locationId, createdAt, updatedAt) VALUES ('2', '10', '2', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (promotedBookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '11', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (promotedBookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '15', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (promotedBookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '9', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (promotedBookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '12', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (promotedBookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '4', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
+INSERT INTO bookClubs (promotedBookId, readerId, locationId, createdAt, updatedAt) VALUES ('3', '5', '1', '2019-04-06 22:18:59', '2019-04-06 22:18:59');
 
 
 SELECT * FROM locations;

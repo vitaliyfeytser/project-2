@@ -102,11 +102,27 @@ footer {
   color: #a5a6a7;
 }
 
-.favorInput {
+.ml-3 {
   width: 20px;
   height: 20px;
   margin-left: 10px;
+  opacity: .5;
 }
+.ml-3:hover {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  opacity: 1;
+  transform: scale(1.1);
+}
+.ml-3:active {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  opacity: .5;
+  transform: scale(1);
+}
+
 
 .jumbotron {
   padding-top: 2rem !important;

@@ -6,7 +6,9 @@ module.exports = function (app) {
   ////////////////////////////////////////////////////////////
   // GET routes for getting each table's dataset
   app.get("/api/readers", function (req, res) {
-    db.readers.findAll({}).then(function (results) {
+    db.readers.findAll({
+      include: [db.favoriteBooks, db.bookClubs]
+    }).then(function (results) {
       res.json(results);
     });
     // res.end();
@@ -44,7 +46,8 @@ module.exports = function (app) {
         .findOne({
           where: {
             id: req.params.bookClubID
-          }
+          },
+          include: [db.readers, db.locations]
         })
         .then(function (results) {
           return res.json(results);
@@ -66,7 +69,8 @@ module.exports = function (app) {
         .findAll({
           where: {
             id: req.params.bookId
-          }
+          },
+          include: [db.readers, db.locations]
         })
         .then(function (results) {
           return res.json(results);
@@ -148,37 +152,21 @@ module.exports = function (app) {
     }
   });
 
+  // GET A READER BY ID WITH ALL ASSOCIATED DATA
   app.get("/api/readers/:readerId", function (req, res) {
-    if (req.params.readerId !== null) {
-      db.readers
-        .findOne({
-          where: {
-            id: req.params.readerId
-          }
-        })
-        .then(function (result) {
-          return res.json(result);
-        });
-    } else {
-      var noresult = {
-        id: "NONE",
-        readerName: "User ID not found",
-        age: 0,
-        gender: "N/A",
-        email: "N/A"
-      };
-      return res.json(noresult);
-    }
+    db.readers
+      .findOne({
+        where: {
+          id: req.params.readerId
+        },
+        include: [db.favoriteBooks, db.bookClubs]
+      })
+      .then(function (result) {
+        return res.json(result);
+      });
   });
 
-  // // Create a new example
-  // app.post("/api/reader", function (req, res) {
-  //   bookClub.readers.create(req.body).then(function (dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
-
-  //Create a new reader
+  // CREATE A NEW READER
   app.post("/api/reader", function (req, res) {
     var reader = req.body;
     console.log(reader);
@@ -225,6 +213,7 @@ module.exports = function (app) {
       });
   });
 
+  // SAVE THE BOOK FAVORITED BY A READER
   app.post("/api/favor", function (req, res) {
     console.log(req.body);
 
@@ -233,31 +222,8 @@ module.exports = function (app) {
     res.status(204).end();
   });
 
-  //Example of app.post if above code does not work/if we need to define the object more clearly
-  //   app.post("/api/new", function(req, res) {
-  //     // Take the request...
-  //     var character = req.body;
 
-  //     // Create a routeName
-
-  //     // Using a RegEx Pattern to remove spaces from character.name
-  //     // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  //     var routeName = character.name.replace(/\s+/g, "").toLowerCase();
-
-  //     // Then add the character to the database using sequelize
-  //     Character.create({
-  //       routeName: routeName,
-  //       name: character.name,
-  //       role: character.role,
-  //       age: character.age,
-  //       forcePoints: character.forcePoints
-  //     });
-
-  //     res.status(204).end();
-  //   });
-  // };
-
-  // Delete an example by id
+  // DELETE A READER BY ID
   app.delete("/api/readers/:id", function (req, res) {
     db.Readers.destroy({
       where: {
